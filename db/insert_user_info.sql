@@ -1,3 +1,3 @@
 insert into user_info(email)
-values(${email})
+values (${email})
 returning *;
