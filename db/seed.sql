@@ -1,3 +1,27 @@
+drop table if exists credentials;
+drop table if exists user_info;
+drop table if exists project_gallery;
+drop table if exists project_gallery_pics;
+drop table if exists tech_tips;
+drop table if exists tech_tips_pics;
+drop table if exists account;
+
+create table user_info(
+user_id SERIAL PRIMARY KEY,
+username VARCHAR(50),
+email VARCHAR(100)
+);
+
+create table credentials(
+user_id INT,
+hash TEXT
+);
+
+CREATE TABLE account(
+account_id SERIAL PRIMARY KEY,
+user_id INT REFERENCES user_info(user_id)
+);
+
 create table project_gallery (
 project_id serial primary key,
 title varchar(150),
