@@ -17,10 +17,13 @@ export default class Nav extends Component {
           drop.classList.add('hide')
       }
   }
+  goHome = () => {
+    this.props.history.push('/')
+  }
   render() {
     return (
       <div className="Nav">
-        <h1>Logo</h1>
+        <h1 onClick={this.goHome}>Logo</h1>
         <i onClick={this.dropdown} className="fas fa-bars" />
         <div id="dropdown" className="dropdown hide">
           <div className="container">

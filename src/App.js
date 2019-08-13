@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav />
+        <Nav history={this.props.history} />
         {routes}
       </div>
     );

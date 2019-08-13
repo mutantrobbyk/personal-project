@@ -19,8 +19,8 @@ export default (
         <Route path='/projects' component={Projects}/>
         <Route path='/auth' component={Auth}/>
         <Route path='/admin/landing' component={AdminLanding}/>
-        <Route path='/admin/project' component={ProjectAdmin}/>
-        <Route path='//admin/tech' component={TechAdmin}/>
+        <Route path='/admin/projects' component={ProjectAdmin}/>
+        <Route path='/admin/tech' component={TechAdmin}/>
         <Route path='/techtips' component={TechTips}/>
         <Route path='/about' component={About}/>
     </Switch>
