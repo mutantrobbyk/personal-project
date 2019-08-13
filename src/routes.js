@@ -6,6 +6,7 @@ import Suspension from './components/Suspension/Suspension'
 import Projects from './components/Blogs/Projects'
 import TechTips from './components/Blogs/TechTips'
 import ProjectAdmin from './components/Home/Admin/ProjectAdmin';
+import AdminLanding from './components/Home/Admin/AdminLanding';
 import TechAdmin from './components/Home/Admin/TechAdmin';
 import About from './components/About/About'
 import Auth from './components/Home/Admin/Auth'
@@ -17,8 +18,9 @@ export default (
         <Route path='/suspension' component={Suspension}/>
         <Route path='/projects' component={Projects}/>
         <Route path='/auth' component={Auth}/>
-        <Route path='/projectadmin' component={ProjectAdmin}/>
-        <Route path='/techtipadmin' component={TechAdmin}/>
+        <Route path='/admin/landing' component={AdminLanding}/>
+        <Route path='/admin/project' component={ProjectAdmin}/>
+        <Route path='//admin/tech' component={TechAdmin}/>
         <Route path='/techtips' component={TechTips}/>
         <Route path='/about' component={About}/>
     </Switch>
