@@ -1,0 +1,47 @@
+.Nav {
+    max-width: 1400px;
+    height: 60px;
+    background-color: darkgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Nav > h1 {
+    margin: 0;
+}
+.Nav > i {
+    font-size: 2rem;
+}
+.dropdown {
+    background: lightgray;
+    transition: .4s;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+
+}
+.dropdown > .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: sans-serif;
+}
+.hide {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+}
+li {
+    list-style: none;
+    color: rgba(37, 36, 83, 0.795);
+}
+a{
+    text-decoration: none;
+}

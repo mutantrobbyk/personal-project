@@ -15,6 +15,7 @@ email VARCHAR(100)
 create table credentials(
 user_id INT,
 hash TEXT
+is_admin boolean
 );
 
 CREATE TABLE account(
@@ -51,3 +52,7 @@ id serial primary key,
 tech_tips_id int references tech_tips(tip_id),
 image text
 );
+
+update credentials 
+set is_admin = true
+where user_id = 1;

@@ -1,6 +1,13 @@
 const bcrypt = require('bcrypt')
 
 module.exports = {
+    checkLogin: (req, res) => {
+        if(req.session.user) {
+            res.status(200).send(req.session.user)
+        } else {
+            res.sendStatus(401)
+        }
+    },
     register: async (req, res) => {
         const db = req.app.get('db')
         const {email, password} = req.body
