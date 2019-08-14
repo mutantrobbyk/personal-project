@@ -1,0 +1,13 @@
+.admin-outer-box {
+    height: 350px;
+    overflow: scroll;
+}
+.admin-projects {
+    display: flex;
+    background-color: gray;
+    margin: 5px;
+}
+.moto {
+    height: 60px;
+    width: auto;
+}

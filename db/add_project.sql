@@ -1,1 +1,0 @@
--- insert into project_gallery (title, sub1, sub2, sub3, body, coverImage, )

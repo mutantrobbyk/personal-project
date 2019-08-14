@@ -19,9 +19,8 @@ module.exports = {
         const hash = bcrypt.hashSync(password, salt)
         const newUser = await db.insert_user_info({email})
         db.insert_hash({hash, user_id: newUser[0].user_id })
-        .then(() => {
-            db.register_account([newUser[0].user_id])
-            req.session.user = newUser[0]
+        .then((result) => {
+            req.session.user = result[0]
             res.status(200).send({message: 'Logged in', user: req.session.user, loggedIn: true})
         })
         .catch(err => {
@@ -40,10 +39,17 @@ module.exports = {
             delete user[0].hash
             req.session.user = user[0]
             return res.status(200).send({message: 'Logged in', user: req.session.user, loggedIn: true})
+        } else {
+            return res.status(401).send({message: 'Failed to login.'})
         }
-    },
+    }, 
     logout: (req, res) => {
         req.session.destroy()
         res.status(200).send({message: 'Logged out.'})
+    },
+    currentUser: (req, res) => {
+        if (req.session.user) {
+            res.status(200).send(req.session.user)
+        }
     }
 }

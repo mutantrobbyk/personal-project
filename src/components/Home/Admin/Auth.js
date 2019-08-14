@@ -16,8 +16,8 @@ class Auth extends Component {
         } = this.state
         axios.post('/auth/register', {email, password})
         .then(res => {
-            const {email} = res.data.user
-            this.props.setUser({email})
+            const {email, user_id, is_admin} = res.data.user
+            this.props.setUser({email, user_id, is_admin})
             this.props.history.push('/admin/landing')
         })
         .catch(err => {
@@ -27,8 +27,8 @@ class Auth extends Component {
     login = () => {
         const {emailInput: email, passwordInput: password} = this.state
         axios.post('/auth/login', {email, password}).then(res => {
-            const {email} = res.data.user
-            this.props.setUser({email})
+            const {email, user_id, is_admin} = res.data.user
+            this.props.setUser({email, user_id, is_admin})
             this.props.history.push('/admin/landing')
         })
         .catch(err => {

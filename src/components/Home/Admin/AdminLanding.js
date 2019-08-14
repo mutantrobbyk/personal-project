@@ -11,9 +11,15 @@ export default class AdminLanding extends Component {
             this.props.history.push('/')
         })
     }
+    checkAdmin = () => {
+        if (this.props.is_admin === false) {
+            this.props.history.push('/')
+        }
+    }
     render () {
+        
         return (
-            <div className='AdminLanding'>AdminLanding
+            <div className='AdminLanding'>{this.checkAdmin()}AdminLanding
             <button onClick={this.userLogout}>LOGOUT</button>
             <br/>
             <Link to='/admin/projects'>
