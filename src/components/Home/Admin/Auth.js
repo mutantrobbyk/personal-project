@@ -41,6 +41,7 @@ class Auth extends Component {
         })
     }
     render () {
+        console.log(this.props)
         return (
             <div className='Auth'>
                 <input onChange={e => this.handleChange(e)} name='emailInput' type="text" placeholder='email' value={this.state.emailInput}/>

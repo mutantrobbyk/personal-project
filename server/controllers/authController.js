@@ -11,14 +11,14 @@ module.exports = {
     register: async (req, res) => {
         const db = req.app.get('db')
         const {email, password} = req.body
-        const user = await db.find_email([email])
+        const user = await db.authentication.find_email([email])
         if (user.length > 0 ) {
             return res.status(400).send({message: `Email in use.`})
         }
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-        const newUser = await db.insert_user_info({email})
-        db.insert_hash({hash, user_id: newUser[0].user_id })
+        const newUser = await db.authentication.insert_user_info({email})
+        db.authentication.insert_hash({hash, user_id: newUser[0].user_id })
         .then((result) => {
             req.session.user = result[0]
             res.status(200).send({message: 'Logged in', user: req.session.user, loggedIn: true})
@@ -30,7 +30,7 @@ module.exports = {
     login: async (req, res) => {
         const db = req.app.get('db')
         const {email, password} = req.body
-        const user = await db.find_email_and_hash([email])
+        const user = await db.authentication.find_email_and_hash([email])
         if (user.length === 0) {
             return res.status(400).send({message: 'Email not found.'})
         }

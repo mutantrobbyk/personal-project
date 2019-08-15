@@ -1,0 +1,13 @@
+.tips-outer-box {
+    height: 350px;
+    overflow: scroll;
+}
+.admin-tips {
+    display: flex;
+    background-color: gray;
+    margin: 5px;
+}
+.tips-pic {
+    height: 60px;
+    width: auto;
+}

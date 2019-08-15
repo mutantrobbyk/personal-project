@@ -10,6 +10,8 @@ import AdminLanding from './components/Home/Admin/AdminLanding';
 import TechAdmin from './components/Home/Admin/TechAdmin';
 import About from './components/About/About'
 import Auth from './components/Home/Admin/Auth'
+import BlogEdit from './components/Home/Admin/BlogEdit'
+import TechEdit from './components/Home/Admin/TechEdit'
 
 export default (
     <Switch>
@@ -19,7 +21,9 @@ export default (
         <Route path='/projects' component={Projects}/>
         <Route path='/auth' component={Auth}/>
         <Route path='/admin/landing' component={AdminLanding}/>
+        <Route path='/admin/projects/edit/:project_id' component={BlogEdit}/>
         <Route path='/admin/projects' component={ProjectAdmin}/>
+        <Route path='/admin/tech/edit/:tip_id' component={TechEdit}/>
         <Route path='/admin/tech' component={TechAdmin}/>
         <Route path='/techtips' component={TechTips}/>
         <Route path='/about' component={About}/>

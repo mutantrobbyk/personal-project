@@ -26,8 +26,9 @@ app.get('/blog/getAllProjects', projCtrl.getAllProjects)
 app.delete('/blog/:project_id', projCtrl.deleteProject)
 app.get('/auth/currentuser', authCtrl.currentUser)
 app.post('/blog/createProjects', projCtrl.createProject)
+app.put('/blog/:project_id',projCtrl.updateProject)
 app.get('/tips/getAllTips', projCtrl.getAllTechTips)
-app.delete('/tips/:tech_tips_id', projCtrl.deleteTechTip)
+app.delete('/tips/:tip_id', projCtrl.deleteTechTip)
 app.post('/tips/createNewTips', projCtrl.createTip)
 
 massive(CONNECTION_STRING).then(db => {

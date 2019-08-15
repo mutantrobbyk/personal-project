@@ -44,12 +44,12 @@ tip_id serial primary key,
 category varchar(30),
 title varchar(150),
 body text,
-video_url text
+url text
 );
 
 create table tech_tips_pics (
 id serial primary key,
-tech_tips_id int references tech_tips(tip_id),
+tip_id int references tech_tips(tip_id),
 image text
 );
 
