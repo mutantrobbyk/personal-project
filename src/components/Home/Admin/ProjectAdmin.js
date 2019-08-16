@@ -10,8 +10,7 @@ export default class ProjectAdmin extends Component {
     sub_2: "",
     sub_3: "",
     body: "",
-    cover_image: "", 
-    editing: false
+    cover_image: ""
   };
   componentDidMount() {
     this.getAllProjects();

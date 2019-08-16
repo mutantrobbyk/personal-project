@@ -48,5 +48,12 @@ module.exports = {
         db.tips.create_tip([category, title, body, url]).then(newTip => {
             res.status(200).send(newTip)
         })
+    },
+    getProjectById: (req, res) => {
+        const db = req.app.get('db')
+        const {project_id} = req.params
+        db.projects.project_by_id([project_id]).then(result => {
+            res.status(200).send(result)
+        })
     }
 }
