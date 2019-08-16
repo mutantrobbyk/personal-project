@@ -35,19 +35,6 @@ export default class ProjectAdmin extends Component {
       projects: res.data
     });
   };
-  updateProject = (project_id) => {
-    axios.put(`/blog/${project_id}`).then(res => {
-      this.setState({
-        projects: res.data
-      })
-    })
-    this.toggleChange()
-  }
-  toggleChange = () => {
-    this.setState({
-      editing: !this.state.editing
-    })
-  }
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
