@@ -29,26 +29,6 @@ module.exports = {
             res.status(200.).send(result)
         })
     },
-    getAllTechTips: (req, res) => {
-        const db = req.app.get('db')
-        db.tips.get_tech_tips().then(result => {
-            res.status(200).send(result)
-        })
-    },
-    deleteTechTip: (req, res) => {
-        const db = req.app.get('db')
-        const {tip_id} = req.params
-        db.tips.delete_tech_tip(tip_id).then(result => {
-            res.status(200).send(result)
-        })
-    },
-    createTip: (req, res) => {
-        const db = req.app.get('db')
-        const {category, title, body, url} = req.body
-        db.tips.create_tip([category, title, body, url]).then(newTip => {
-            res.status(200).send(newTip)
-        })
-    },
     getProjectById: (req, res) => {
         const db = req.app.get('db')
         const {project_id} = req.params

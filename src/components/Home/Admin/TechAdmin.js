@@ -54,7 +54,7 @@ export default class TechAdmin extends Component {
                 <h5>{el.category}</h5>
                 <h3>{el.title}</h3>
                 <p>{el.body}</p>
-                <button>EDIT</button>
+                <button onClick={() => this.props.history.push(`/admin/tech/edit/${el.tip_id}`)}>EDIT</button>
                 <button
                   onClick={() => {
                     this.deleteTip(el.tip_id);

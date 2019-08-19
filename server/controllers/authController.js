@@ -48,7 +48,7 @@ module.exports = {
         res.status(200).send({message: 'Logged out.'})
     },
     currentUser: (req, res) => {
-        console.log(req.session)
+        // console.log(req.session)
         if (req.session.user) {
             res.status(200).send(req.session.user)
         }

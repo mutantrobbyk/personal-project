@@ -1,2 +1,2 @@
 select * from project_gallery
-where project_id = ($1)
+where project_id = ($1);

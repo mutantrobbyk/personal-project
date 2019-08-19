@@ -6,6 +6,7 @@ const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET} = process.env
 const session = require('express-session')
 const authCtrl = require('./controllers/authController')
 const projCtrl = require('./controllers/projectController')
+const tipCtrl = require('./controllers/tipsController')
 
 app.use(express.json())
 
@@ -28,9 +29,11 @@ app.delete('/blog/:project_id', projCtrl.deleteProject)
 app.get('/auth/currentuser', authCtrl.currentUser)
 app.post('/blog/createProjects', projCtrl.createProject)
 app.put('/blog/:project_id',projCtrl.updateProject)
-app.get('/tips/getAllTips', projCtrl.getAllTechTips)
-app.delete('/tips/:tip_id', projCtrl.deleteTechTip)
-app.post('/tips/createNewTips', projCtrl.createTip)
+app.get('/tips/getAllTips', tipCtrl.getAllTechTips)
+app.delete('/tips/:tip_id', tipCtrl.deleteTechTip)
+app.post('/tips/createNewTips', tipCtrl.createTip)
+app.put('/tips/:tip_id', tipCtrl.updateTip)
+app.get('/tips/getAllTips/:tip_id', tipCtrl.getTipById)
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
