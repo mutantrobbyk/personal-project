@@ -23,7 +23,7 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-        <h1 onClick={this.goHome}>Logo</h1>
+        <h1 onClick={this.goHome}>SD</h1>
         <i onClick={this.dropdown} className="fas fa-bars" />
         <div id="dropdown" className="dropdown hide">
           <div className="container">
@@ -37,7 +37,7 @@ export default class Nav extends Component {
               <li onClick={this.hide}>Projects</li>
             </Link>
             <Link to='/techtips'>
-              <li onClick={this.hide}>Tech Tips</li>
+              <li onClick={this.hide}>Shop Talk</li>
             </Link>
             <Link to='/about'>
               <li onClick={this.hide}>About</li>
