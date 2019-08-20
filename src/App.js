@@ -17,6 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav history={this.props.history} />
+        <div className='nav_offset'></div>
         {routes}
       </div>
     );

@@ -15,7 +15,7 @@ export default class Home extends Component {
                 <div className='main_image'>
                 <img className='mainPageImages' src={MainImage} alt="Motorcycle"/>
                 <h1 className='SD'>SYNDICATE DEVELOPMENT</h1>
-                <p className='sub_1'>Performance, Passion, Precision</p>
+                <p className='sub_1'>Performance, Passion, Precision.</p>
                 <Link to='/projects'>
                 <p className='project_gallery'>PROJECT GALLERY</p>
                 </Link>

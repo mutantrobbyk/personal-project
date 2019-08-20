@@ -1,0 +1,19 @@
+.Suspension_room {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+.Suspension img{
+    width: 100vw;
+    opacity: .9;
+    z-index: -1;
+}
+.Suspension h1 {
+    position: absolute;
+    font-size: 5rem;
+    top: 0;
+    left: 0;
+    margin-top: 30vh;
+    margin-left: 18vw;
+}

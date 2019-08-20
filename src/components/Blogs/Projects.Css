@@ -1,0 +1,40 @@
+.Projects {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: space-around;
+}
+.projects_head {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+.projects_head img {
+    width: 100vw;
+    opacity: .9;
+    z-index: -1;
+}
+.projects_head h1 {
+    position: absolute;
+    font-size: 5rem;
+    top: 0;
+    right: 0;
+    margin-top: 15vh;
+    margin-right: 22vw;
+}
+.projects_container {
+    border: 3px solid black;
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects_container img {
+    width: 400px;
+    height: 300px;
+}

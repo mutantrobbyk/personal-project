@@ -2,4 +2,8 @@
   text-align: center;
   margin: 0;
 }
+.nav_offset {
+  width: 100vw;
+  height: 70px;
+}
 
