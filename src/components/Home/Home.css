@@ -1,3 +1,4 @@
+
 .main_image {
     position: relative;
     text-align: center;
@@ -5,7 +6,7 @@
     font-family: 'Alegreya Sans', sans-serif;
 }
 
-.mainImage {
+.mainPageImages {
     width: 100vw;
     opacity: .9;
     z-index: -1;
@@ -22,7 +23,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 21vh;
+    margin-top: 24vh;
     margin-left: 8vw;
     font-size: 1.75rem;
 }
@@ -46,7 +47,7 @@
     margin: 15px;
 }
 hr {
-    margin: 30px;
+    margin: 40px;
     border-top: 3px solid rgb(25, 25, 189);
 }
 .tagline {
@@ -56,4 +57,64 @@ hr {
 }
 .description {
     padding: 0 8vw;
+}
+.icons {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: space-around;
+}
+.icon_pic {
+    border: 3px solid black;
+    margin: 5px 5px;
+    width: 40vw;
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icons img{
+    width: 200px;
+    height: 200px;
+    
+}
+.icons h3 {
+    margin: 0;
+    color: black;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+.contact {
+    margin: 30px 0;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+.mainPageImages_1 {
+    width: 100vw;
+    opacity: .8;
+    z-index: -1;
+}
+.contact h1 {
+    position: absolute;
+    font-size: 3.5rem;
+    top: 0;
+    left: 0;
+    margin-top: 44vh;
+    margin-left: 8vw;
+}
+.contact p {
+    border: 9px solid rgb(219, 5, 5);
+    color: rgb(219, 5, 5);
+    position: absolute;
+    font-size: 2rem;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 55vh;
+    margin-left: 15vw;
+    cursor: pointer;
+    padding: 10px;
 }
