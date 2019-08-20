@@ -1,14 +1,23 @@
 import React, {Component} from 'react'
 import './TechEdit.css'
 import axios from 'axios'
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 
 export default class TechEdit extends Component {
-    state = {
-        category: '',
-        title: '',
-        body: '',
-        url: ''
+    constructor (props) {
+        super (props)
+        this.state = {
+            category: '',
+            title: '',
+            body: '',
+            url: ''
+        }
+        this.handleChange2 = this.handleChange2.bind(this)
     }
+    handleChange2(value) {
+        this.setState({body: value})
+      }
     componentDidMount() {
         this.getTips()
     }
@@ -43,7 +52,7 @@ export default class TechEdit extends Component {
                 <div>
                     <input onChange={e => this.handleChange(e)} value={category} name='category' type="text"/>
                     <input onChange={e => this.handleChange(e)} value={title} name='title' type="text"/>
-                    <input onChange={e => this.handleChange(e)} value={body} name='body' type="text"/>
+                    <ReactQuill value={body} onChange={this.handleChange2}/>
                     <input onChange={e => this.handleChange(e)} value={url} name='url' type="text"/>
                 </div>
                 <div>

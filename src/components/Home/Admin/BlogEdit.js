@@ -1,17 +1,26 @@
 import React, {Component} from 'react'
 import './BlogEdit.css'
 import axios from 'axios'
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 
 export default class BlogEdit extends Component {
     //have access to project_id from match.params 
-    state = {
-        title: "",
-        sub_1: "",
-        sub_2: "",
-        sub_3: "",
-        body: "",
-        cover_image: ""
+    constructor (props) {
+        super (props)
+        this.state = {
+            title: "",
+            sub_1: "",
+            sub_2: "",
+            sub_3: "",
+            body: "",
+            cover_image: ""
+        }
+        this.handleChange2 = this.handleChange2.bind(this)
     }
+    handleChange2(value) {
+        this.setState({body: value})
+      }
     componentDidMount() {
         this.getProjects()
     }
@@ -54,7 +63,7 @@ export default class BlogEdit extends Component {
                     <input onChange={e => this.handleChange(e)} value={sub_1} name='sub_1' type="text"/>
                     <input onChange={e => this.handleChange(e)} value={sub_2} name='sub_2' type="text"/>
                     <input onChange={e => this.handleChange(e)} value={sub_3} name='sub_3' type="text"/>
-                    <input onChange={e => this.handleChange(e)} value={body} name='body' type="text"/>
+                    <ReactQuill value={body} onChange={this.handleChange2}/>
                     <input onChange={e => this.handleChange(e)} value={cover_image}  name='cover_image' type="text"/>
                 </div>
                 <div>

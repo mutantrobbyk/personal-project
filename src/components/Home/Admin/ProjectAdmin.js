@@ -1,17 +1,23 @@
 import React, { Component } from "react";
 import "./ProjectAdmin.css";
 import axios from "axios";
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 
 export default class ProjectAdmin extends Component {
-  state = {
-    projects: [],
-    title: "",
-    sub_1: "",
-    sub_2: "",
-    sub_3: "",
-    body: "",
-    cover_image: ""
-  };
+  constructor (props) {
+    super (props)
+    this.state = {
+      projects: [],
+      title: "",
+      sub_1: "",
+      sub_2: "",
+      sub_3: "",
+      body: "",
+      cover_image: "",
+    };
+    this.handleChange2 = this.handleChange2.bind(this)
+  }
   componentDidMount() {
     this.getAllProjects();
   }
@@ -40,6 +46,9 @@ export default class ProjectAdmin extends Component {
       [e.target.name]: e.target.value
     });
   };
+  handleChange2(value) {
+    this.setState({body: value})
+  }
   render() {
     const { title, sub_1, sub_2, sub_3, body, cover_image } = this.state;
     return (
@@ -58,7 +67,7 @@ export default class ProjectAdmin extends Component {
                   <p>{el.sub_2}</p>
                   <p>{el.sub_3}</p>
                 </div>
-                <p>{el.body}</p>
+                <section dangerouslySetInnerHTML={{ __html: el.body }}/>
                   <button onClick={() => this.props.history.push(`/admin/projects/edit/${el.project_id}`)}>Edit</button>
                 <button
                   onClick={() => {
@@ -101,13 +110,7 @@ export default class ProjectAdmin extends Component {
             placeholder="model"
             name="sub_3"
           />
-          <input
-            value={this.state.body}
-            onChange={e => this.handleChange(e)}
-            type="text"
-            placeholder="body"
-            name="body"
-          />
+          <ReactQuill value={this.state.body} onChange={this.handleChange2} />
           <input
             value={this.state.cover_image}
             onChange={e => this.handleChange(e)}

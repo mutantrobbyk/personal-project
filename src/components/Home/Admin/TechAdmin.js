@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 import "./TechAdmin.css";
 import axios from "axios";
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 
 export default class TechAdmin extends Component {
-  state = {
-    tips: [],
-    category: "",
-    title: "",
-    body: "",
-    url: ""
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      tips: [],
+      category: "",
+      title: "",
+      body: "",
+      url: ""
+    };
+    this.handleChange2 = this.handleChange2.bind(this)
+  }
+  handleChange2(value) {
+    this.setState({body: value})
+  }
   componentDidMount() {
     this.getAllTips();
   }
@@ -81,13 +90,7 @@ export default class TechAdmin extends Component {
             placeholder="title"
             name="title"
           />
-          <input
-            value={this.state.body}
-            onChange={e => this.handleChange(e)}
-            type="text"
-            placeholder="body"
-            name="body"
-          />
+          <ReactQuill value={this.state.body} onChange={this.handleChange2}/>
           <input
             value={this.state.url}
             onChange={e => this.handleChange(e)}
