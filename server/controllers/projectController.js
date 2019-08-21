@@ -15,7 +15,9 @@ module.exports = {
     createProject: (req, res) => {
         const db = req.app.get('db')
         const {title, sub_1, sub_2, sub_3, body, cover_image} = req.body
+        console.log(req.body)
         db.projects.create_project([title, sub_1, sub_2, sub_3, body, cover_image]).then(newProject => {
+            console.log('asfdasf', newProject)
             res.status(200).send(newProject)
         })
     },
