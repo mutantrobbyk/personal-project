@@ -26,11 +26,11 @@ export default class Projects extends Component {
                 </div>
             {this.state.projects.map(el => {
                 return (
-                    <div className='projects_container'>
+                    <div onClick={() => this.props.history.push(`/projects/edit/${el.project_id}`)} className='projects_container'>
                     <div key={el.project_id}>
                         <img src={el.cover_image} alt=""/>
                         <h3>{el.title}</h3>
-                        <div>
+                        <div className='details'>
                             <p>Year: {el.sub_1}</p>
                             <p>Make: {el.sub_2}</p>
                             <p>Model: {el.sub_3}</p>

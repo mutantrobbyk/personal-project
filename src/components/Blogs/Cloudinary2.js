@@ -28,6 +28,7 @@ class Cloudinary2 extends Component {
   }
 
   handleImageUpload = async file => {
+    // eslint-disable-next-line
     const uploads = file.map(image => {
       const formData = new FormData();
       formData.append("file", image);

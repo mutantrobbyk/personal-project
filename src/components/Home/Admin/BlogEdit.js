@@ -145,8 +145,8 @@ export default class BlogEdit extends Component {
           <Cloudinary2 getImage={this.getImage} />
         </div>
         <div>
-          {images ? (
-            images.map((el, i )=> {
+          {images !== undefined ? (
+            images.map(el => {
               return (
                 <div key={el.id}>
                   <img className="multiple_img" src={el.image ? el.image : el} alt="" />
