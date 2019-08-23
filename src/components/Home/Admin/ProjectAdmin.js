@@ -3,7 +3,7 @@ import "./ProjectAdmin.css";
 import axios from "axios";
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
-// import Amazon from '../../Blogs/Amazon'
+import Cloudinary from '../../Blogs/Cloudinary'
 
 export default class ProjectAdmin extends Component {
   constructor (props) {
@@ -16,23 +16,17 @@ export default class ProjectAdmin extends Component {
       sub_3: "",
       body: "",
       cover_image: "",
-      isUploading: false,
       url: '',
-      file: {}
     };
     this.handleChange2 = this.handleChange2.bind(this)
   }
-  // loadToAmazon = (file, signedRequest, url) => {
-  //   console.log(file, signedRequest, url)
-  //   this.setState({
-  //     isUploading: false,
-  //     cover_image: url,
-  //     file,
-  //     signedRequest
-  //   })
-  // }
   componentDidMount() {
     this.getAllProjects();
+  }
+  getUrl = (url) => {
+    this.setState({
+      cover_image: url
+    })
   }
   getAllProjects = () => {
     axios.get("/blog/getAllProjects").then(res => {
@@ -62,35 +56,6 @@ export default class ProjectAdmin extends Component {
   handleChange2(value) {
     this.setState({body: value})
   }
-//   uploadFile = () => {
-//     const {file, signedRequest, url} = this.state
-//     console.log(url)
-//   const options = {
-//     headers: {
-//       "Content-Type": file.type
-//     }
-//   };
-
-//   axios
-//     .put(signedRequest, file, options)
-//     .then(response => {
-//       this.setState({ isUploading: false, url });
-//     })
-//     .catch(err => {
-//       this.setState({
-//         isUploading: false
-//       });
-//       if (err.status === 403) {
-//         alert(
-//           `Your request for a signed URL failed with a status 403. Double check the CORS configuration and bucket policy in the README. You also will want to double check your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in your .env and ensure that they are the same as the ones that you created in the IAM dashboard. You may need to generate new keys\n${
-//             err.stack
-//           }`
-//         );
-//       } else {
-//         alert(`ERROR: ${err.status}\n ${err.stack}`);
-//       }
-//     });
-// };
   render() {
     const { title, sub_1, sub_2, sub_3, body, cover_image } = this.state;
     return (
@@ -160,7 +125,7 @@ export default class ProjectAdmin extends Component {
             placeholder="cover_image"
             name="cover_image"
           />
-          {/* <Amazon loadToAmazon={this.loadToAmazon}/> */}
+          <Cloudinary getUrl={this.getUrl}/>
           <button
             onClick={() => {
               this.createProject({

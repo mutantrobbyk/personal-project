@@ -7,7 +7,7 @@ const REACT_APP_CLOUDINARY_CLOUD_NAME =
   process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
 const REACT_APP_CLOUDINARY_API_KEY = process.env.REACT_APP_CLOUDINARY_API_KEY;
 
-class Cloudinary extends Component {
+class Cloudinary2 extends Component {
   constructor(props) {
     super(props);
 
@@ -43,21 +43,21 @@ class Cloudinary extends Component {
           { headers: { "X-Requested-With": "XMLHttpRequest" } }
         )
         .then(response => {
-          this.props.getUrl(response.data.url)
+          this.props.getImage(response.data.url)
         //   this.setState({
         //     images: [...this.state.images, response.data.url]
         //   });
         });
     });
 
-    console.log(uploads);
+    // console.log(uploads);
   };
 
   render() {
     let images = this.state.images.map(image => {
       
       return (
-        <div key={image} className="image">
+        <div key={image} className="image_cloudinary2">
           <figure>
             <img src={image} alt="" />
           </figure>
@@ -71,7 +71,7 @@ class Cloudinary extends Component {
         <div className="dropzone">
           <Dropzone
             style={{ border: "1px solid black" }}
-            multiple={false} 
+            multiple={true} 
             accept="image/*" 
             onDrop={this.onImageDrop.bind(this)}
             >
@@ -79,7 +79,7 @@ class Cloudinary extends Component {
                 return (
                 <div {...getRootProps()}>
                   <input {...getInputProps()} />
-                  {<p>Click to upload cover image.</p>}
+                  {<p>Click to add multiple photos.</p>}
                 </div>
               );
             }}
@@ -91,4 +91,4 @@ class Cloudinary extends Component {
   }
 }
 
-export default Cloudinary;
+export default Cloudinary2;
