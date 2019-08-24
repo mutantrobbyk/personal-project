@@ -106,8 +106,8 @@ hr {
   font-size: 3.5rem;
   top: 0;
   left: 0;
-  margin-top: 44vh;
-  margin-left: 8vw;
+  margin-top: 10%;
+  margin-left: 8%;
 }
 .contact p {
   border: 9px solid rgb(219, 5, 5);
@@ -116,8 +116,8 @@ hr {
   font-size: 2rem;
   bottom: 0;
   left: 0;
-  margin-bottom: 45vh;
-  margin-left: 15vw;
+  margin-bottom: 30%;
+  margin-left: 15%;
   cursor: pointer;
   padding: 10px;
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './Auth.css'
 import axios from 'axios'
-import {setUser} from '../../../ducks/reducer'
+import {setUser, isAdmin} from '../../../ducks/reducer'
 import {connect} from 'react-redux'
 
 class Auth extends Component {
@@ -29,6 +29,9 @@ class Auth extends Component {
         axios.post('/auth/login', {email, password}).then(res => {
             const {email, user_id, is_admin} = res.data.user
             this.props.setUser({email, user_id, is_admin})
+            // if (email = 'rob@rob.com') {
+            //     is_admin(true)
+            // } else {is_admin(false)}
             this.props.history.push('/admin/landing')
         })
         .catch(err => {
@@ -52,4 +55,4 @@ class Auth extends Component {
         )
     }
 }
-export default connect(null, {setUser})(Auth)
+export default connect(null, {setUser, isAdmin})(Auth)

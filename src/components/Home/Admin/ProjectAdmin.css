@@ -1,13 +1,50 @@
 .admin-outer-box {
-    height: 350px;
+    height: 250px;
     overflow: scroll;
 }
 .admin-projects {
+    height: 100px;
     display: flex;
+    
+    justify-content: space-between;
     background-color: gray;
     margin: 5px;
+    overflow: hidden;
 }
-.moto {
-    height: 60px;
-    width: auto;
+.box_1{
+    height: 100px;
+    width: 13%;
 }
+.box_1 img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.box_2 {
+    align-items: center;
+    height: 100px;
+    width: 27%;
+    text-align: left;
+}
+.box_3 {
+    width: 40%;
+    text-align: left;
+}
+.box_4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-right: 4%;
+}
+.project_inputs > input {
+    height: 3vh;
+    /* display:flex;
+    text-align: center; */
+    /* justify-content: center; */
+}
+.quill_box {
+    width: 80%;
+}
+/* .quill {
+    width: 80%;
+} */

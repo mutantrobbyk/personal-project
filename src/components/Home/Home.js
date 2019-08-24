@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 // import MainImage from '../images/m45a2849.jpg'
 import Spring from "../images/noun_suspension_378329.png";
-import Piston from "../images/noun_Piston_103816.png";
-import Pic from "../images/noun_Photo_1827280.png";
-import Wrench from "../images/noun_Wrench_2558227.png";
+import Piston from "../images/noun_Piston_103816 (1).png";
+import Pic from "../images/noun_Photo_1827280 (1).png";
+import Wrench from "../images/noun_Wrench_2558227 (1).png";
 import Jay from "../images/m45a2996.jpg";
 
 export default class Home extends Component {

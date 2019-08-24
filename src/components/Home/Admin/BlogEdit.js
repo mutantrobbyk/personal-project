@@ -64,7 +64,7 @@ export default class BlogEdit extends Component {
                return {image: el.image, id: el.id}
            }
         })
-        console.log(newArray)
+        console.log(newArray.length)
         this.setState({
           project_id: res.data[0].project_id,
           title: res.data[0].title,
@@ -145,7 +145,7 @@ export default class BlogEdit extends Component {
           <Cloudinary2 getImage={this.getImage} />
         </div>
         <div>
-          {images !== undefined ? (
+          {!images ? (
             images.map(el => {
               return (
                 <div key={el.id}>

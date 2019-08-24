@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "./ProjectAdmin.css";
 import axios from "axios";
-import ReactQuill from 'react-quill'
-import 'react-quill/dist/quill.snow.css'
-import Cloudinary from '../../Blogs/Cloudinary'
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import {connect} from 'react-redux'
+import Cloudinary from "../../Blogs/Cloudinary";
 
-export default class ProjectAdmin extends Component {
-  constructor (props) {
-    super (props)
+class ProjectAdmin extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       projects: [],
       title: "",
@@ -16,18 +17,26 @@ export default class ProjectAdmin extends Component {
       sub_3: "",
       body: "",
       cover_image: "",
-      url: '',
+      url: ""
     };
-    this.handleChange2 = this.handleChange2.bind(this)
+    this.handleChange2 = this.handleChange2.bind(this);
   }
   componentDidMount() {
     this.getAllProjects();
   }
-  getUrl = (url) => {
+  componentDidUpdate() {
+    this.checkAdmin()
+  }
+  checkAdmin = () => {
+      if (!this.props.is_admin) {
+        this.props.history.push(`/auth`)
+      }
+  }
+  getUrl = url => {
     this.setState({
       cover_image: url
-    })
-  }
+    });
+  };
   getAllProjects = () => {
     axios.get("/blog/getAllProjects").then(res => {
       this.setState({
@@ -54,41 +63,53 @@ export default class ProjectAdmin extends Component {
     });
   };
   handleChange2(value) {
-    this.setState({body: value})
+    this.setState({ body: value });
   }
   render() {
     const { title, sub_1, sub_2, sub_3, body, cover_image } = this.state;
     return (
+      
       <div className="ProjectAdmin">
-        ProjectAdmin
         <div className="admin-outer-box">
           {this.state.projects.map(el => {
             return (
               <div className="admin-projects" key={el.project_id}>
-                <div>
+                <div className='box_1'>
                   <img className="moto" src={el.cover_image} alt="Project" />
                 </div>
-                <h3>{el.title}</h3>
-                <div>
-                  <p>{el.sub_1}</p>
-                  <p>{el.sub_2}</p>
-                  <p>{el.sub_3}</p>
+                <div className='box_2'>
+                  <h3>{el.title}</h3>
+                  <p>Year: {el.sub_1}</p>
+                  <p>Make: {el.sub_2}</p>
+                  <p>Model: {el.sub_3}</p>
                 </div>
-                <section dangerouslySetInnerHTML={{ __html: el.body }}/>
-                  <button onClick={() => this.props.history.push(`/admin/projects/edit/${el.project_id}`)}>Edit</button>
-                <button
-                  onClick={() => {
-                    this.deleteProject(el.project_id);
-                  }}
-                >
-                  Delete
-                </button>
+                <div className='box_3'>
+                  <section dangerouslySetInnerHTML={{ __html: el.body }} />
+                </div>
+                <div className='box_4'>
+                  <button
+                    onClick={() =>
+                      this.props.history.push(
+                        `/admin/projects/edit/${el.project_id}`
+                      )
+                    }
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => {
+                      this.deleteProject(el.project_id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             );
           })}
         </div>
-        
-        <div>
+          <hr/>
+        <div className='project_inputs'>
           <input
             value={this.state.title}
             onChange={e => this.handleChange(e)}
@@ -117,7 +138,10 @@ export default class ProjectAdmin extends Component {
             placeholder="model"
             name="sub_3"
           />
-          <ReactQuill value={this.state.body} onChange={this.handleChange2} />
+          <div className='quill_box'>
+          <ReactQuill className='quill' value={this.state.body} onChange={this.handleChange2} />
+
+          </div>
           <input
             value={this.state.cover_image}
             onChange={e => this.handleChange(e)}
@@ -125,7 +149,7 @@ export default class ProjectAdmin extends Component {
             placeholder="cover_image"
             name="cover_image"
           />
-          <Cloudinary getUrl={this.getUrl}/>
+          <Cloudinary getUrl={this.getUrl} />
           <button
             onClick={() => {
               this.createProject({
@@ -145,7 +169,7 @@ export default class ProjectAdmin extends Component {
                 body: "",
                 cover_image: "",
                 isUploading: false,
-                url: '',
+                url: "",
                 file: {}
               });
             }}
@@ -153,7 +177,14 @@ export default class ProjectAdmin extends Component {
             CREATE PROJECT
           </button>
         </div>
-      </div>
+      </div> 
     );
   }
 }
+function mapStateToProps(Redux) {
+  const {is_admin} = Redux
+  return (
+    {is_admin}
+  )
+}
+export default connect(mapStateToProps)(ProjectAdmin)

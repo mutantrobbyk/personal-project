@@ -26,7 +26,7 @@ export default class Projects extends Component {
                 </div>
             {this.state.projects.map(el => {
                 return (
-                    <div onClick={() => this.props.history.push(`/projects/edit/${el.project_id}`)} className='projects_container'>
+                    <div onClick={() => this.props.history.push(`/projects/viewproject/${el.project_id}`)} className='projects_container'>
                     <div key={el.project_id}>
                         <img src={el.cover_image} alt=""/>
                         <h3>{el.title}</h3>

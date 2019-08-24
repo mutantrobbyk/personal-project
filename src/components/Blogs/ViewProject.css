@@ -1,0 +1,58 @@
+.outer_box {
+  width: 100vw;
+  text-align: center;
+  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566592386/hanxb9glwbowkbbfjik7.jpg");
+}
+.inner_box {
+  display: inline-block;
+  width: 80%;
+  height: 100%;
+  background-color: rgba(250, 249, 248, 0.973);
+}
+.third_box {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  display: flex;
+  margin-left: 4%;
+  margin-top: 4%;
+  font-family: "Alegreya Sans", sans-serif;
+}
+.jbro {
+  width: 48vw;
+  height: auto;
+  box-shadow: 6px 6px 6px;
+}
+.project_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5%;
+  text-align: center;
+}
+.project_info p {
+    margin-top: 10px;
+}
+.blog_content > section {
+  width: 100%;
+  text-align: left;
+  padding: 0 20px;
+}
+.section {
+  margin: 0;
+}
+.bottom_pictures > div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.more_pics {
+  width: 100px;
+  height: auto;
+}
+.project_hr {
+  margin: 20px;
+}

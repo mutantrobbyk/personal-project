@@ -35,8 +35,11 @@ module.exports = {
         console.log(images)
         // let newImages = []
         images.map(async (el) => {
-            // console.log(el)
-            await db.projects.update_images([project_id, el])
+            if (el) {
+                await db.projects.update_images([project_id, el])
+
+            }
+            
         })
         db.projects.get_all_gallery_photos([project_id]).then(result => {
             res.status(200).send(result)

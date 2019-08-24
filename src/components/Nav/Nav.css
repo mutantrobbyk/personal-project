@@ -22,20 +22,20 @@
 .Nav > i {
     color: white;
     font-size: 2rem;
-    padding-right: 40px;
+    /* padding-right: 40px; */
 }
 .dropdown {
     opacity: .8;
     text-align: center;
     background-color:  rgb(36, 33, 33);
     transition: .4s;
-    height: 300px;
+    height: 350px;
     width: 200px;
     position: absolute;
     top: 70px;
     right: 0;
     z-index: 10;
-    padding-right: 40px;
+    /* padding-right: 40px; */
 
 }
 .dropdown > .container {
@@ -55,7 +55,7 @@
     opacity: 0;
 }
 li {
-    margin: 15px;
+    margin: 14px;
     font-size: 1.5rem;
     list-style: none;
     color: white;
