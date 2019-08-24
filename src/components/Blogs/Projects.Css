@@ -18,6 +18,14 @@
     opacity: .9;
     z-index: -1;
 }
+.rob-pic {
+    background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566659497/fiotvxqvlnnzdyfphikz.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 35vh;
+    opacity: .9;
+    z-index: -1;
+}
 .projects_head h1 {
     position: absolute;
     font-size: 5rem;

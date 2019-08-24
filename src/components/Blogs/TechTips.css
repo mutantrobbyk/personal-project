@@ -1,0 +1,45 @@
+.TechTips {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: space-around;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+.tips_head {
+    position: relative;
+    text-align: center;
+    color: black;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+.top-image {
+    background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566660386/rwfr07xgrtyehs7tqbcv.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 35vh;
+    opacity: .9;
+    z-index: -1;
+}
+.tips_head h1 {
+    position: absolute;
+    font-size: 5rem;
+    top: 0;
+    right: 0;
+    margin-top: 15vh;
+    margin-right: 22vw;
+}
+.tips_container {
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tips_container h3 {
+    margin: 0;
+}
+.tips_container img {
+    width: 400px;
+    height: 300px;
+}
