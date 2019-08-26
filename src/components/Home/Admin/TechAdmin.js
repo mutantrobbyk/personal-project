@@ -63,6 +63,9 @@ class TechAdmin extends Component {
       [e.target.name]: e.target.value
     });
   };
+  goBack = () => {
+    this.props.history.push("/admin/landing");
+  };
   render() {
     const { category, title, body, url } = this.state;
     return (
@@ -133,6 +136,8 @@ class TechAdmin extends Component {
           >
             CREATE TIP
           </button>
+          <br/>
+          <button onClick={() => this.goBack()}>BACK TO ADMIN</button>
         </div>
       </div>
     );

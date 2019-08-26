@@ -65,6 +65,9 @@ class ProjectAdmin extends Component {
   handleChange2(value) {
     this.setState({ body: value });
   }
+  goBack = () => {
+    this.props.history.push("/admin/landing");
+  };
   render() {
     const { title, sub_1, sub_2, sub_3, body, cover_image } = this.state;
     return (
@@ -176,6 +179,8 @@ class ProjectAdmin extends Component {
           >
             CREATE PROJECT
           </button>
+          <br/>
+          <button onClick={() => this.goBack()}>BACK TO ADMIN</button>
         </div>
       </div> 
     );

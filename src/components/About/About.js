@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import './About.css'
 import axios from 'axios'
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 export default class About extends Component {
     state = {
@@ -39,7 +41,8 @@ export default class About extends Component {
             <input type="text" placeholder='your name' name='name' value={name} onChange={this.handleInput}/>
             <input type="text" placeholder='your email' name='email' value={email} onChange={ this.handleInput}/>
             <input type="text" placeholder='subject' name='subject' value={subject} onChange={this.handleInput}/>
-            <input type="text" placeholder='message' name='text' value={text} onChange={this.handleInput}/>
+            {/* <input type="text" placeholder='message' name='text' value={text} onChange={this.handleInput}/> */}
+            <ReactQuill value={text} onChange={this.handleInput}/>
             <br/>
             <br/>
             <button onClick={() => {
