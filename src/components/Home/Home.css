@@ -20,16 +20,16 @@
   top: 0;
   left: 0;
   /* margin: 0; */
-  margin-top: 10vh;
-  margin-left: 8vw;
+  margin-top: 6%;
+  margin-left: 8%;
   width: 75%;
 }
 .sub_1 {
   position: absolute;
   top: 0;
   left: 0;
-  margin-top: 18vh;
-  margin-left: 8vw;
+  margin-top: 10%;
+  margin-left: 8%;
   font-size: 1.75rem;
 }
 .project_gallery {
@@ -39,8 +39,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-right: 8vw;
-  margin-bottom: 30vh;
+  margin-right: 8%;
+  margin-bottom: 15%;
   font-size: 2rem;
   cursor: pointer;
   padding: 10px;
@@ -90,15 +90,19 @@ hr {
   font-family: "Alegreya Sans", sans-serif;
 }
 .contact {
-  margin: 40px 0;
+  /* margin: 40px 0; */
   position: relative;
-  text-align: center;
+  text-align: left;
   color: white;
   font-family: "Alegreya Sans", sans-serif;
 }
 .mainPageImages_1 {
-  width: 100vw;
-  opacity: 0.8;
+  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566836472/gimrzsuvathl7rcifzgi.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.9;
   z-index: -1;
 }
 .contact h1 {
@@ -196,6 +200,9 @@ hr {
     /* background-size: auto; */
     background-position: center;
   }
+  .mainPageImages_1 {
+    background-position: center;
+  }
   /* .main_image p {
         font-size: 1.5rem;
     } */
@@ -216,6 +223,14 @@ hr {
   .sub_1 {
     margin-top: 15vh;
   }
+  .icon_pic {
+   padding: 0;
+   margin: 5px;
+  }
+  .icon_pic img{
+    height: 50%;
+    width: 50%;
+  }
 }
 @media (max-width: 500px) {
   .main_image {
@@ -234,5 +249,21 @@ hr {
   }
   .project_gallery {
       display: inline-block;
+  }
+}
+@media (max-width: 375px) {
+  .SD {
+    margin-top: 8%;
+    line-height: 1;
+  }
+  .mainPageImages {
+    text-align: center;
+  }
+  .sub_1 {
+    margin-top: 26%;
+    margin-left: 14%;
+  }
+  .icon_pic {
+
   }
 }

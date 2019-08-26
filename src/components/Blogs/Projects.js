@@ -33,7 +33,7 @@ export default class Projects extends Component {
               }
               className="projects_container"
             >
-              <div key={el.project_id}>
+              <div className='proj-container' key={el.project_id}>
                 <img src={el.cover_image} alt="" />
                 <h3>{el.title}</h3>
                 <div className="details">

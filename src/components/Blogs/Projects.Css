@@ -21,6 +21,7 @@
 .rob-pic {
     background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566659497/fiotvxqvlnnzdyfphikz.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 35vh;
     opacity: .9;
@@ -31,8 +32,8 @@
     font-size: 5rem;
     top: 0;
     right: 0;
-    margin-top: 15vh;
-    margin-right: 22vw;
+    margin-top: 8%;
+    margin-right: 12%;
 }
 .projects_container {
     margin: 20px;
@@ -55,4 +56,20 @@
 .projects_container img {
     width: 400px;
     height: 300px;
+}
+@media (max-width: 750px) {
+    .rob-pic {
+        background-position: center;
+    }
+    .projects_head h1 {
+        font-size: 3.5rem;
+        margin-top: 14%;
+        margin-right: 5%;
+    }
+}
+@media (max-width: 500px) {
+    .proj-container img {
+        height: 100%;
+        width: 100%;
+    }
 }
