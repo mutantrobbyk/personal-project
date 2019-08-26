@@ -2,15 +2,16 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const massive = require('massive')
-const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET, S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY} = process.env
+const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET} = process.env
 const session = require('express-session')
 const authCtrl = require('./controllers/authController')
 const projCtrl = require('./controllers/projectController')
 const tipCtrl = require('./controllers/tipsController')
 const ctrl = require('./controllers/controller')
-const aws = require('aws-sdk');
+const path = require('path');
 
 app.use(express.json())
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(session({
     secret: SESSION_SECRET,
@@ -45,3 +46,6 @@ app.get('/tips/getAllTips/:tip_id', tipCtrl.getTipById)
 app.post('/api/email',ctrl.email)
 app.get('/tips/getAllTips/pics/:tip_id', tipCtrl.getPicsById)
 app.post('/techtips/morepics/:tip_id', tipCtrl.addMorePics)
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
