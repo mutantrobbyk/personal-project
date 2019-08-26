@@ -56,3 +56,13 @@
 .project_hr {
   margin: 20px;
 }
+@media (max-width: 600px) {
+  .title {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .inner_box {
+    width: 90%;
+  }
+}
