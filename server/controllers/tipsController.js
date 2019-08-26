@@ -35,5 +35,24 @@ module.exports = {
         db.tips.tip_by_id([tip_id]).then(result => {
             res.status(200).send(result)
         })
+    },
+    getPicsById: (req, res) => {
+        const db = req.app.get('db')
+        const {tip_id} = req.params
+        db.tips.pic_by_id([tip_id]).then(result => {
+            res.status(200).send(result)
+        })
+    },
+    addMorePics: (req, res) => {
+        console.log(req.params, 123123, req.body)
+        const db = req.app.get('db')
+        const {tip_id} = req.params
+        // const {pics} = req.body
+        // console.log(pics)
+        req.body.map( async (el) => {
+            await db.tips.add_pics_by_id([tip_id, el])
+        })
+        res.sendStatus(200)  
+        
     }
 }

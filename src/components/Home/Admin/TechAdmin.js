@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import "./TechAdmin.css";
 import axios from "axios";
-import ReactQuill from 'react-quill'
-import 'react-quill/dist/quill.snow.css'
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import { connect } from "react-redux";
+import Cloudinary from "../../Blogs/Cloudinary";
 
-export default class TechAdmin extends Component {
+class TechAdmin extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       tips: [],
       category: "",
@@ -14,14 +16,27 @@ export default class TechAdmin extends Component {
       body: "",
       url: ""
     };
-    this.handleChange2 = this.handleChange2.bind(this)
+    this.handleChange2 = this.handleChange2.bind(this);
   }
   handleChange2(value) {
-    this.setState({body: value})
+    this.setState({ body: value });
   }
   componentDidMount() {
     this.getAllTips();
   }
+  componentDidUpdate() {
+    this.checkAdmin();
+  }
+  checkAdmin = () => {
+    if (!this.props.is_admin) {
+      this.props.history.push(`/auth`);
+    }
+  };
+  getUrl = url => {
+    this.setState({
+      url: url
+    });
+  };
   getAllTips = () => {
     axios.get("/tips/getAllTips").then(res => {
       this.setState({
@@ -63,7 +78,13 @@ export default class TechAdmin extends Component {
                 <h5>{el.category}</h5>
                 <h3>{el.title}</h3>
                 <p>{el.body}</p>
-                <button onClick={() => this.props.history.push(`/admin/tech/edit/${el.tip_id}`)}>EDIT</button>
+                <button
+                  onClick={() =>
+                    this.props.history.push(`/admin/tech/edit/${el.tip_id}`)
+                  }
+                >
+                  EDIT
+                </button>
                 <button
                   onClick={() => {
                     this.deleteTip(el.tip_id);
@@ -90,7 +111,7 @@ export default class TechAdmin extends Component {
             placeholder="title"
             name="title"
           />
-          <ReactQuill value={this.state.body} onChange={this.handleChange2}/>
+          <ReactQuill value={this.state.body} onChange={this.handleChange2} />
           <input
             value={this.state.url}
             onChange={e => this.handleChange(e)}
@@ -98,6 +119,7 @@ export default class TechAdmin extends Component {
             placeholder="url"
             name="url"
           />
+          <Cloudinary getUrl={this.getUrl} />
           <button
             onClick={() => {
               this.createTip({ category, title, body, url });
@@ -116,3 +138,8 @@ export default class TechAdmin extends Component {
     );
   }
 }
+function mapStateToProps(Redux) {
+  const { is_admin } = Redux;
+  return { is_admin };
+}
+export default connect(mapStateToProps)(TechAdmin);
