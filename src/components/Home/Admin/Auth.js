@@ -48,7 +48,7 @@ class Auth extends Component {
         return (
             <div className='Auth'>
                 <input onChange={e => this.handleChange(e)} name='emailInput' type="text" placeholder='email' value={this.state.emailInput}/>
-                <input onChange={e => this.handleChange(e)} name='passwordInput' type="text" placeholder='password' value={this.state.passwordInput}/>
+                <input onChange={e => this.handleChange(e)} name='passwordInput' type="password" placeholder='password' value={this.state.passwordInput}/>
                 <button onClick={this.login}>LOGIN</button>
                 <button onClick={this.registerUser}>REGISTER</button>
             </div>

@@ -12,9 +12,34 @@
 .third-box {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.third-box hr{
+  width: 90%;
 }
 .main-img-tech {
-    width: 48vw;
+  width: 48vw;
   height: auto;
   box-shadow: 6px 6px 6px;
+}
+.view-tips-images {
+  margin: 5px;
+  height: 75px;
+  width: 100px;
+}
+.view-tips-images img{
+  height: 100%;
+  width: 100%;
+}
+.tips-images-outer-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  .inner-box {
+    width: 90%;
+  }
 }

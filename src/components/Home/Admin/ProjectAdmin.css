@@ -5,7 +5,6 @@
 .admin-projects {
     height: 100px;
     display: flex;
-    
     justify-content: space-between;
     background-color: gray;
     margin: 5px;

@@ -1,0 +1,36 @@
+.TechEdit {
+    display: flex;
+    flex-direction: column;
+}
+.TechEdit hr {
+    width: 90vw;
+}
+.bottom-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.image-container {
+    display: flex;
+    flex-direction: row;
+}
+.tech-edit-additional-image {
+    display: flex;
+    height: 10vh;
+    width: 8vw;
+    margin: 3px;
+}
+.tech-edit-additional-image img {
+    height: 100%;
+    width: 100%;
+}
+.tech-edit-additional-image2 {
+    height: 10vh;
+    width: 8vw;
+}
+.tech-edit-additional-image2 img {
+    height: 100%;
+    width: 100%;
+}

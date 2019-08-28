@@ -1,19 +1,122 @@
 .Engine_room {
-    position: relative;
-    text-align: center;
-    color: black;
-    font-family: 'Alegreya Sans', sans-serif;
+  position: relative;
+  text-align: center;
+  color: black;
+  font-family: "Alegreya Sans", sans-serif;
 }
-.Engine img{
-    width: 100vw;
-    opacity: .9;
-    z-index: -1;
+.matt-pic {
+  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566577344/opwdtqaee01zpygipyjz.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 75vh;
+  opacity: 0.9;
+  z-index: -1;
 }
 .Engine h1 {
-    position: absolute;
-    font-size: 5rem;
-    top: 0;
-    right: 0;
-    margin-top: 30vh;
-    margin-right: 22vw;
+  position: absolute;
+  font-size: 5rem;
+  top: 0;
+  right: 0;
+  margin-top: 18%;
+  margin-right: 18%;
+}
+.engine-list li {
+  color: black;
+}
+.engine-info {
+  display: flex;
+  justify-content: space-evenly;
+  width: 95vw;
+}
+.engine-pics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.engine-pics img {
+  height: 100%;
+  width: 100%;
+}
+.e_pic_1 {
+  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566969793/usgqk8ijaxfmz8nlzhes.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vh;
+  width: 30vh;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.e_pic_2 {
+  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566969498/kbvv6evnxzrvcxgyggr8.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vh;
+  width: 30vh;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.e_pic_3 {
+  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566969498/qh8iszlwuou4csyusn9u.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vh;
+  width: 30vh;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.e_pic_4 {
+  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566969498/zhez5grlifejg4mf8nh0.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vh;
+  width: 30vh;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+@media (max-width: 1100px) {
+  .Engine h1 {
+    margin-top: 18%;
+    margin-right: 7%;
+  }
+}
+@media (max-width: 900px) {
+  .matt-pic {
+    background-position: center;
+  }
+}
+@media (max-width: 500px) {
+  .Engine h1 {
+    margin-top: 55%;
+    margin-right: 3%;
+    font-size: 3.5rem;
+  }
+  .e_pic_1 {
+    height: 100px;
+    width: 75px;
+  }
+  .e_pic_2 {
+    height: 100px;
+    width: 75px;
+  }
+  .e_pic_3 {
+    height: 100px;
+    width: 75px;
+  }
+  .e_pic_4 {
+    height: 100px;
+    width: 75px;
+  }
 }

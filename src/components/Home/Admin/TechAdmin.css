@@ -1,13 +1,37 @@
 .tips-outer-box {
-    height: 350px;
+    height: 250px;
     overflow: scroll;
 }
 .admin-tips {
+    height: 100px;
     display: flex;
+    justify-content: space-between;
     background-color: gray;
     margin: 5px;
+    overflow: hidden;
+}
+.pic_box {
+    height: 100px;
+    width: 13%;
 }
 .tips-pic {
-    height: 60px;
-    width: auto;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; 
+}
+.cat-title {
+    align-items: center;
+    height: 100px;
+    width: 27%;
+    text-align: left;
+}
+.tip-body {
+    width: 40%;
+    text-align: left;
+}
+.edit-del {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-right: 4%;
 }

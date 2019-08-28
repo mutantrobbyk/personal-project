@@ -70,17 +70,21 @@ class TechAdmin extends Component {
     const { category, title, body, url } = this.state;
     return (
       <div className="TechAdmin">
-        TechAdmin
         <div className="tips-outer-box">
           {this.state.tips.map(el => {
             return (
               <div className="admin-tips" key={el.tip_id}>
-                <div>
+                <div className='pic_box'>
                   <img className="tips-pic" src={el.url} alt="" />
                 </div>
+                <div className='cat-title'>
                 <h5>{el.category}</h5>
                 <h3>{el.title}</h3>
-                <p>{el.body}</p>
+                </div>
+                <div className='tip-body'>
+                <section dangerouslySetInnerHTML={{ __html: el.body }} />
+                </div>
+                <div className='edit-del'>
                 <button
                   onClick={() =>
                     this.props.history.push(`/admin/tech/edit/${el.tip_id}`)
@@ -95,10 +99,15 @@ class TechAdmin extends Component {
                 >
                   DELETE
                 </button>
+                </div>
               </div>
             );
           })}
         </div>
+        <hr/>
+        <h2>Create a New Tip</h2>
+        <br/>
+        <br/>
         <div>
           <input
             value={this.state.category}

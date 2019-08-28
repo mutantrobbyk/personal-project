@@ -23,7 +23,11 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-        <h1 onClick={this.goHome}>SD</h1>
+        <div className='syndicate_lion'>
+        <img  src='https://res.cloudinary.com/datcltouj/image/upload/v1566926793/xupuooj60ihaop22wvbk.png'
+        alt=''
+        onClick={this.goHome}></img>
+        </div>
         <i onClick={this.dropdown} className="fas fa-bars" />
         <div id="dropdown" className="dropdown hide">
           <div className="container">

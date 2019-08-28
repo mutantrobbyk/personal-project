@@ -112,6 +112,9 @@ class ProjectAdmin extends Component {
           })}
         </div>
           <hr/>
+          <h2>Create a New Post</h2>
+          <br/>
+          <br/>
         <div className='project_inputs'>
           <input
             value={this.state.title}
@@ -152,7 +155,11 @@ class ProjectAdmin extends Component {
             placeholder="cover_image"
             name="cover_image"
           />
+          <br/>
+          <br/>
           <Cloudinary getUrl={this.getUrl} />
+          <br/>
+          <br/>
           <button
             onClick={() => {
               this.createProject({

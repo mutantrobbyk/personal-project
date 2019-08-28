@@ -28,9 +28,11 @@ export default class About extends Component {
         })
     }
     render () {
-        const {name, email, subject,  text} = this.state
+        const {name, email, subject, text} = this.state
         return (
-            <div className='About'><br/><br/><br/>SYNDICATE DEVELOPMENT <br/> Doug Hasket has been working on 
+            <div className='About'>
+                <img src="https://res.cloudinary.com/datcltouj/image/upload/v1566977445/sykjstvg6kqeoqz7phny.jpg" alt=""/>
+                <br/><br/><br/>SYNDICATE DEVELOPMENT <br/> Doug Hasket has been working on 
             motorcycles since the late 90's. He has woked with many pro motocross and supercross riders
             such as Kyle Chisolm, Bracken Hall, Landon Powell. He has collaborated with industry experts such
             as "Bones", longtime Kawasaki suspension expert. 
@@ -41,7 +43,6 @@ export default class About extends Component {
             <input type="text" placeholder='your name' name='name' value={name} onChange={this.handleInput}/>
             <input type="text" placeholder='your email' name='email' value={email} onChange={ this.handleInput}/>
             <input type="text" placeholder='subject' name='subject' value={subject} onChange={this.handleInput}/>
-            {/* <input type="text" placeholder='message' name='text' value={text} onChange={this.handleInput}/> */}
             <ReactQuill value={text} onChange={this.handleInput}/>
             <br/>
             <br/>

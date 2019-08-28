@@ -47,11 +47,12 @@ export default class TechEdit extends Component {
         })
     }
     addMultiplePics = body => {
-        console.log(body)
+        // console.log(body)
         axios.post(`/techtips/morepics/${this.props.match.params.tip_id}`, body).then(res => {
-            this.setState({
-                pics: res.data
-            })
+            console.log(res.data)
+            // this.setState({
+            //     pics: res.data
+            // })
         })
     }
     handleChange = e => {
@@ -68,43 +69,62 @@ export default class TechEdit extends Component {
         this.props.history.push('/admin/tech')
     }
     getPic = pic => {
-        console.log(pic)
+        // console.log(pic)
+        // console.log('asdfasdf', this.state.pics)
             this.setState({
               pics: [...this.state.pics, pic]
             });
     };
     render () {
         let {category, title, body, url, pics, images} = this.state
+        // console.log(pics)
         return(
-            <div>TechEdit
+            <div className='TechEdit'>
                 <div>
                     <input onChange={e => this.handleChange(e)} value={category} name='category' type="text"/>
                     <input onChange={e => this.handleChange(e)} value={title} name='title' type="text"/>
                     <ReactQuill value={body} onChange={this.handleChange2}/>
+                    <br/>
                     <input onChange={e => this.handleChange(e)} value={url} name='url' type="text"/>
+                    <br/>
+                    <br/>
                     <Cloudinary/>
+                    <br/>
                 </div>
                 <div>
                     <button onClick={() => this.updateTips(this.state.tip_id, this.state)}>UPDATE CHANGES</button>
+                    <br/>
                     <button onClick={() => this.goBack()}>CANCEL</button>
                 </div>
                 <hr/>
-                <div>
+                <div className='bottom-container'>
+                    <div className='image-container'> 
                    {images ? (
                        images.map(el => {
                         return (
-                            <img key={el.id} src={el.image} alt=""/>
+                            <div className='tech-edit-additional-image'>
+                                <img key={el.id} src={el.image} alt=""/>
+                            </div>
                         )
                     })) : null}   
+                    </div>
                     <hr/>
-                   {pics !==null || pics !== undefined || pics !== 'undefined' ? (
-                       pics.map(el => {
+                    <div className='image-container'>
+                   {/* {pics !==null || pics !== undefined || pics !== 'undefined' ? ( */}
+                       {pics.map(el => {
                        return (
-                           <img src={el} alt=""/>
-                       )
-                   })): <p>No Images To Upload</p>}
+                           <div className='tech-edit-additional-image2'>
+                               <img src={el} alt=""/>
+                           </div>
+                       )})}
+                {/* //    })): <p>No Images To Upload</p>} */}
+                    </div>
                     <Cloudinary3 getPic={this.getPic}/>
-                    <button onClick={() => this.addMultiplePics(pics)}>ADD MORE PICS</button>
+                    <br/>
+                    <br/>
+                    <button onClick={() => {
+                        this.addMultiplePics(pics) 
+                        this.setState({pics: []})}}>ADD MORE PICS</button>
                 </div>
             </div>
         )

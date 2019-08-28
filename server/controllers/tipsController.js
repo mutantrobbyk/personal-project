@@ -44,7 +44,7 @@ module.exports = {
         })
     },
     addMorePics: (req, res) => {
-        console.log(req.params, 123123, req.body)
+        // console.log(req.params, 123123, req.body)
         const db = req.app.get('db')
         const {tip_id} = req.params
         // const {pics} = req.body

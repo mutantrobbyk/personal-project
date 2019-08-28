@@ -8,10 +8,12 @@ export default class ViewTips extends Component {
     category: "",
     title: "",
     body: "",
-    url: ""
+    url: "",
+    images: ''
   };
   componentDidMount() {
       this.getTip()
+      this.getAdditionalPics()
   }
   getTip = () => {
       axios
@@ -26,11 +28,19 @@ export default class ViewTips extends Component {
       })
     })
   }
+  getAdditionalPics = () => {
+    // console.log(this.state.images)
+    axios.get(`/tips/getAllTips/pics/${this.props.match.params.tip_id}`).then(res => {
+        this.setState({
+            images: res.data
+        })
+    })
+}
   goBack = () => {
     this.props.history.push("/techtips");
   };
   render() {
-      let {category, title, body, url} = this.state
+      let {category, title, body, url, images} = this.state
       return (
           <div className='outer-box'>
               <div className="inner-box">
@@ -42,10 +52,23 @@ export default class ViewTips extends Component {
                         <h1>{title}</h1>
                         <h4>{category}</h4>
                       </div>
+                      <br/>
                       <button onClick={() => this.goBack()}>BACK TO SHOP</button>
                       <hr/>
                       <div>
-                          <p>{body}</p>
+                      <section dangerouslySetInnerHTML={{ __html: body }} />
+                      </div>
+                      <br/>
+                      <div className='tips-images-outer-box'>
+                        {images ? (
+                          images.map(el => {
+                            return (
+                              <div className='view-tips-images'>
+                                <img key={el.id} src={el.image} alt=""/>
+                              </div>
+                            )
+                          })
+                        ): null}
                       </div>
                   </div>
               </div>
