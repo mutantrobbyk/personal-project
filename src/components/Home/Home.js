@@ -31,22 +31,7 @@ export default class Home extends Component {
             </b>
           </h4>
           <p className="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, cum,
-            aperiam voluptatum unde sed doloremque nesciunt soluta tempora nihil
-            sunt quia harum amet eius provident earum explicabo at iste
-            debitis.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Vitae, cum, aperiam voluptatum unde sed doloremque nesciunt soluta
-            tempora nihil sunt quia harum amet eius provident earum explicabo at
-            iste debitis.Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Vitae, cum, aperiam voluptatum unde sed doloremque nesciunt
-            soluta tempora nihil sunt quia harum amet eius provident earum
-            explicabo at iste debitis.Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Vitae, cum, aperiam voluptatum unde sed doloremque
-            nesciunt soluta tempora nihil sunt quia harum amet eius provident
-            earum explicabo at iste debitis.Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Vitae, cum, aperiam voluptatum unde
-            sed doloremque nesciunt soluta tempora nihil sunt quia harum amet
-            eius provident earum explicabo at iste debitis.
+          From simple upgrades to full race ready bikes, Syndicate Development is here to cater to all of your motorcycle needs.  With state of the art equipment and a performance dyno room, we are here to get your machine performing better than you even thought possible.  We specialize in custom suspension, engine performance, and ECU tuning, but we also offer things from regular services to full race prep. Give us a call or send us a message and let us know what we can do for you!
           </p>
         </div>
         <hr />
