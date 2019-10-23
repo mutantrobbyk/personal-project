@@ -21,6 +21,12 @@ export default class BlogEdit extends Component {
     };
     this.handleChange2 = this.handleChange2.bind(this);
   }
+  hide () {
+    const drop = document.getElementById('dropdown')
+    if (!drop.classList.contains('hide')) {
+        drop.classList.add('hide')
+    }
+}
   handleChange2(value) {
     this.setState({ body: value });
   }
@@ -91,11 +97,11 @@ export default class BlogEdit extends Component {
     this.props.history.push("/admin/projects");
   };
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     let { title, sub_1, sub_2, sub_3, body, cover_image, images } = this.state;
     // console.log(title)
     return (
-      <div>
+      <div onClick={this.hide}>
         BlogEdit
         <div>
           <input

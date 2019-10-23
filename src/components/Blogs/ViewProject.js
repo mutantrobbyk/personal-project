@@ -12,6 +12,12 @@ export default class ViewProject extends Component {
     cover_image: "",
     images: []
   };
+  hide () {
+    const drop = document.getElementById('dropdown')
+    if (!drop.classList.contains('hide')) {
+        drop.classList.add('hide')
+    }
+}
   componentDidMount() {
     this.getProject();
     console.log(this.images);
@@ -47,7 +53,7 @@ export default class ViewProject extends Component {
   render() {
     let { title, sub_1, sub_2, sub_3, body, cover_image, images } = this.state;
     return (
-      <div className="outer_box">
+      <div onClick={this.hide} className="outer_box">
         <div className="inner_box">
           <div className="third_box">
             <div className="title">

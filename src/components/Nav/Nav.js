@@ -23,7 +23,7 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-        <div className='syndicate_lion'>
+        <div onClick={this.hide} className='syndicate_lion'>
         <img  src='https://res.cloudinary.com/datcltouj/image/upload/v1566926793/xupuooj60ihaop22wvbk.png'
         alt=''
         onClick={this.goHome}></img>

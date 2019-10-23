@@ -11,6 +11,12 @@ export default class About extends Component {
         subject: '',
         text: '',
     }
+    hide () {
+        const drop = document.getElementById('dropdown')
+        if (!drop.classList.contains('hide')) {
+            drop.classList.add('hide')
+        }
+    }
     handleInput = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -30,7 +36,7 @@ export default class About extends Component {
     render () {
         const {name, email, subject} = this.state
         return (
-            <div className='About-outer' >
+            <div onCLick={this.hide} className='About-outer' >
                 <div className='About'>
                     <div className='about-pics'>
                 <img className='one' src="https://res.cloudinary.com/datcltouj/image/upload/v1570478297/lchkfu4bspgu65uf4o4u.jpg" alt="dirtbike"/>

@@ -21,6 +21,12 @@ class ProjectAdmin extends Component {
     };
     this.handleChange2 = this.handleChange2.bind(this);
   }
+  hide () {
+    const drop = document.getElementById('dropdown')
+    if (!drop.classList.contains('hide')) {
+        drop.classList.add('hide')
+    }
+}
   componentDidMount() {
     this.getAllProjects();
   }

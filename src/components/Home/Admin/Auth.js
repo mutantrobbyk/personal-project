@@ -9,6 +9,12 @@ class Auth extends Component {
         emailInput: '',
         passwordInput: ''
     }
+    hide () {
+        const drop = document.getElementById('dropdown')
+        if (!drop.classList.contains('hide')) {
+            drop.classList.add('hide')
+        }
+    }
     registerUser = () => {
         const {
             emailInput: email,
@@ -46,7 +52,7 @@ class Auth extends Component {
     render () {
         // console.log(this.props)
         return (
-            <div className='Auth'>
+            <div onClick={this.hide} className='Auth'>
                 <input onChange={e => this.handleChange(e)} name='emailInput' type="text" placeholder='email' value={this.state.emailInput}/>
                 <input onChange={e => this.handleChange(e)} name='passwordInput' type="password" placeholder='password' value={this.state.passwordInput}/>
                 <button onClick={this.login}>LOGIN</button>

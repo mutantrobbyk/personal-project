@@ -12,6 +12,12 @@ class AdminLanding extends Component {
             this.props.history.push('/')
         })
     }
+    hide () {
+      const drop = document.getElementById('dropdown')
+      if (!drop.classList.contains('hide')) {
+          drop.classList.add('hide')
+      }
+  }
     componentDidUpdate() {
         this.checkAdmin();
       }
@@ -23,7 +29,7 @@ class AdminLanding extends Component {
     render () {
         
         return (
-            <div className='AdminLanding'>{this.checkAdmin()}
+            <div onClick={this.hide} className='AdminLanding'>{this.checkAdmin()}
             <br/>
             <Link to='/admin/projects'>
             <h3 className='h3'>Update Projects</h3>

@@ -10,8 +10,8 @@
   font-size: 2rem;
 } */
 .About {
-  width: 70%;
-  height: 43%;
+  width: 900px;
+  height: 650px;
   display: flex;
   /* position: relative; */
 }
@@ -77,4 +77,19 @@
 .about-input {
     display: flex;
     flex-direction: row;
+}
+@media (max-width: 1000px){
+    .About {
+      width: 600px;
+      height: 400px;
+    }
+}
+@media (max-width: 650px) {
+  .About {
+    width: 400px;
+    height: 300px;
+  }
+  .contact h3 {
+    /* font-size: .9rem; */
+  }
 }

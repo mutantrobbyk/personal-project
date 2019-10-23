@@ -11,6 +11,12 @@ export default class ViewTips extends Component {
     url: "",
     images: ''
   };
+  hide () {
+    const drop = document.getElementById('dropdown')
+    if (!drop.classList.contains('hide')) {
+        drop.classList.add('hide')
+    }
+}
   componentDidMount() {
       this.getTip()
       this.getAdditionalPics()
@@ -42,7 +48,7 @@ export default class ViewTips extends Component {
   render() {
       let {category, title, body, url, images} = this.state
       return (
-          <div className='outer-box'>
+          <div onClick={this.hide} className='outer-box'>
               <div className="inner-box">
                   <div className="third-box">
                       <div>

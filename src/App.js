@@ -15,7 +15,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div  className="App">
         <Nav history={this.props.history} />
         <div className='nav_offset'></div>
         {routes}

@@ -6,6 +6,12 @@ export default class TechTips extends Component {
     state = {
         tips: []
     }
+    hide () {
+      const drop = document.getElementById('dropdown')
+      if (!drop.classList.contains('hide')) {
+          drop.classList.add('hide')
+      }
+  }
     componentDidMount() {
         this.getAllTips()
     }
@@ -18,7 +24,7 @@ export default class TechTips extends Component {
     }
   render() {
     return (
-      <div className="TechTips">
+      <div onClick={this.hide} className="TechTips">
         <div className="tips_head">
           <div className="top-image" />
           <h1>SHOP TALK.</h1>

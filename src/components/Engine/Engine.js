@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import "./Engine.css";
 
 export default class Engine extends Component {
+  hide () {
+    const drop = document.getElementById('dropdown')
+    if (!drop.classList.contains('hide')) {
+        drop.classList.add('hide')
+    }
+}
   render() {
     return (
-      <div className="Engine_room">
+      <div onClick={this.hide} className="Engine_room">
         <div className="Engine">
           <div className='matt-pic' />
           <h1>ENGINE.</h1>

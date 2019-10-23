@@ -6,6 +6,12 @@ export default class Projects extends Component {
   state = {
     projects: []
   };
+  hide () {
+    const drop = document.getElementById('dropdown')
+    if (!drop.classList.contains('hide')) {
+        drop.classList.add('hide')
+    }
+}
   componentDidMount() {
     this.getAllProjects();
   }
@@ -18,7 +24,7 @@ export default class Projects extends Component {
   };
   render() {
     return (
-      <div className="Projects">
+      <div onClick = {this.hide} className="Projects">
         <div className="projects_head">
           <div className="rob-pic" />
           <h1>PROJECTS.</h1>

@@ -8,9 +8,15 @@ import Pic from "../images/noun_Photo_1827280 (1).png";
 import Wrench from "../images/noun_Wrench_2558227 (1).png";
 
 export default class Home extends Component {
+  hide () {
+    const drop = document.getElementById('dropdown')
+    if (!drop.classList.contains('hide')) {
+        drop.classList.add('hide')
+    }
+}
   render() {
     return (
-      <div className="Home">
+      <div onClick={this.hide}className="Home">
         <div className="main_image">
           <div className="mainPageImages" />
           <h1 className="SD">SYNDICATE DEVELOPMENT</h1>
