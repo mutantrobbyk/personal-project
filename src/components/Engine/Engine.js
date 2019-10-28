@@ -15,8 +15,7 @@ export default class Engine extends Component {
           <div className='matt-pic' />
           <h1>ENGINE.</h1>
         </div>
-        <br />
-        <h2>Precision Engine Tuning</h2>
+        <h2>Precision Engines</h2>
         <div className="engine-info">
           <div className="engine-list">
             <li>Dyno</li>
@@ -26,10 +25,14 @@ export default class Engine extends Component {
             <li>Cams</li>
           </div>
           <div className="engine-pics">
-            <div className="e_pic_1" />
+            <img className='e_pic_1' src="https://res.cloudinary.com/datcltouj/image/upload/v1566969793/usgqk8ijaxfmz8nlzhes.jpg" alt=""/>
+            <img className='e_pic_2' src="https://res.cloudinary.com/datcltouj/image/upload/v1566969498/kbvv6evnxzrvcxgyggr8.jpg" alt=""/>
+            <img className='e_pic_3' src="https://res.cloudinary.com/datcltouj/image/upload/v1566969498/qh8iszlwuou4csyusn9u.jpg" alt=""/>
+            <img className='e_pic_4' src="https://res.cloudinary.com/datcltouj/image/upload/v1566969498/zhez5grlifejg4mf8nh0.jpg" alt=""/>
+            {/* <div className="e_pic_1" />
             <div className="e_pic_2" />
             <div className="e_pic_3" />
-            <div className="e_pic_4" />
+            <div className="e_pic_4" /> */}
           </div>
         </div>
       </div>

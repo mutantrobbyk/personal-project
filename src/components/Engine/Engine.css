@@ -1,8 +1,11 @@
 .Engine_room {
-  position: relative;
+  /* position: relative; */
   text-align: center;
   color: black;
   font-family: "Alegreya Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .matt-pic {
   background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566577344/opwdtqaee01zpygipyjz.jpg");
@@ -28,63 +31,65 @@
   display: flex;
   justify-content: space-evenly;
   width: 95vw;
+  height: 40vh;
+  /* margin-top: 5vh;
+  margin-right: 0; */
+  margin: 0;
+}
+@keyframes engines {
+  0% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .engine-pics {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  height: 400px;
+  width: 300px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 .engine-pics img {
+  background-size: cover;
+  background-position: center;
   height: 100%;
   width: 100%;
+  position: absolute;
+  animation-name: engines;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
 }
 .e_pic_1 {
-  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566969793/usgqk8ijaxfmz8nlzhes.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 40vh;
-  width: 30vh;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  animation-delay: 9s;
+  
 }
 .e_pic_2 {
-  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566969498/kbvv6evnxzrvcxgyggr8.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 40vh;
-  width: 30vh;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  
+animation-delay: 6s;
 }
 .e_pic_3 {
-  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566969498/qh8iszlwuou4csyusn9u.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 40vh;
-  width: 30vh;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  
+  animation-delay: 3s;
 }
 .e_pic_4 {
-  background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566969498/zhez5grlifejg4mf8nh0.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 40vh;
-  width: 30vh;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  animation-delay: 0s;
 }
 @media (max-width: 1100px) {
   .Engine h1 {
