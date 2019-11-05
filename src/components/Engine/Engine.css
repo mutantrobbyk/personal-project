@@ -74,18 +74,12 @@
   animation-name: engines;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 12s;
+  animation-duration: 9s;
 }
 .e_pic_1 {
-  animation-delay: 9s;
-  
-}
-.e_pic_2 {
-  
-animation-delay: 6s;
+  animation-delay: 6s;
 }
 .e_pic_3 {
-  
   animation-delay: 3s;
 }
 .e_pic_4 {
