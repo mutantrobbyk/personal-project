@@ -79,7 +79,7 @@ class Cloudinary extends Component {
                 return (
                 <div {...getRootProps()}>
                   <input {...getInputProps()} />
-                  {<p>Click to upload cover image.</p>}
+                  {<button>Click to upload cover image.</button>}
                 </div>
               );
             }}

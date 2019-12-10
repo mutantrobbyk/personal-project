@@ -18,6 +18,12 @@ class TechAdmin extends Component {
     };
     this.handleChange2 = this.handleChange2.bind(this);
   }
+  hide () {
+    const drop = document.getElementById('dropdown')
+    if (!drop.classList.contains('hide')) {
+        drop.classList.add('hide')
+    }
+}
   handleChange2(value) {
     this.setState({ body: value });
   }
@@ -69,7 +75,7 @@ class TechAdmin extends Component {
   render() {
     const { category, title, body, url } = this.state;
     return (
-      <div className="TechAdmin">
+      <div className="TechAdmin" onClick={this.hide}>
         <div className="tips-outer-box">
           {this.state.tips.map(el => {
             return (

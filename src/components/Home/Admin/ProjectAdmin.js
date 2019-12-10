@@ -78,7 +78,7 @@ class ProjectAdmin extends Component {
     const { title, sub_1, sub_2, sub_3, body, cover_image } = this.state;
     return (
       
-      <div className="ProjectAdmin">
+      <div className="ProjectAdmin" onClick={this.hide}>
         <div className="admin-outer-box">
           {this.state.projects.map(el => {
             return (

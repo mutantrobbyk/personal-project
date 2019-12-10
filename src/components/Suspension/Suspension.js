@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import "./Suspension.css";
 
 export default class Suspension extends Component {
+  hide () {
+    const drop = document.getElementById('dropdown')
+    if (!drop.classList.contains('hide')) {
+        drop.classList.add('hide')
+    }
+}
   render() {
     return (
-      <div className="Suspension_room">
+      <div className="Suspension_room" onClick={this.hide}>
         <div className="Suspension">
           <div className="todd-pic" />
           <h1>SUSPENSION.</h1>

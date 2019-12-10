@@ -36,7 +36,7 @@ export default class About extends Component {
   render() {
     const { name, email, subject } = this.state;
     return (
-      <div onCLick={this.hide} className="About-outer">
+      <div onClick={this.hide} className="About-outer">
         <div className="About">
           <div className="about-pics">
             <img

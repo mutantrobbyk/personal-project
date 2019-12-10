@@ -20,6 +20,12 @@ export default class TechEdit extends Component {
         }
         this.handleChange2 = this.handleChange2.bind(this)
     }
+    hide () {
+        const drop = document.getElementById('dropdown')
+        if (!drop.classList.contains('hide')) {
+            drop.classList.add('hide')
+        }
+    }
     handleChange2(value) {
         this.setState({body: value})
       }
@@ -79,7 +85,7 @@ export default class TechEdit extends Component {
         let {category, title, body, url, pics, images} = this.state
         // console.log(pics)
         return(
-            <div className='TechEdit'>
+            <div className='TechEdit' onClick={this.hide}>
                 <div>
                     <input onChange={e => this.handleChange(e)} value={category} name='category' type="text"/>
                     <input onChange={e => this.handleChange(e)} value={title} name='title' type="text"/>
