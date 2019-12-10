@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import axios from 'axios'
+import {connect} from 'react-redux'
+import {setUser} from '../../ducks/reducer'
 import "./Nav.css";
 
-export default class Nav extends Component {
+class Nav extends Component {
   dropdown () {
     const drop = document.getElementById("dropdown");
     if (drop.classList.contains("hide")) {
@@ -19,6 +22,11 @@ export default class Nav extends Component {
   }
   goHome = () => {
     this.props.history.push('/')
+  }
+  componentDidMount() {
+    axios.get("/auth/currentuser").then(res => {
+      this.props.setUser(res.data);
+    });
   }
   render() {
     return (
@@ -55,3 +63,5 @@ export default class Nav extends Component {
     );
   }
 }
+
+export default connect(null, {setUser})(withRouter(Nav))
