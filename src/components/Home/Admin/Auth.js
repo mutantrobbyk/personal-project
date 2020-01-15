@@ -27,7 +27,8 @@ class Auth extends Component {
             this.props.history.push('/admin/landing')
         })
         .catch(err => {
-            alert('Email already in use.')
+            console.log(err.response.data)
+            alert(err.response.data.message)
         })
     }
     login = () => {

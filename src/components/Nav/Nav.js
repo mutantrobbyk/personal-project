@@ -54,6 +54,9 @@ class Nav extends Component {
             <Link to='/about'>
               <li onClick={this.hide}>About</li>
             </Link>
+            <Link to='/services'>
+              <li onClick={this.hide}>Services</li>
+            </Link>
             <Link to='/'>
               <li onClick={this.hide}>Home</li>
             </Link>

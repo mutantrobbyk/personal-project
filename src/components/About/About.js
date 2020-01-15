@@ -33,8 +33,13 @@ export default class About extends Component {
       });
     });
   };
+  quillChange = value => {
+    this.setState({
+      text: value
+    })
+  }
   render() {
-    const { name, email, subject } = this.state;
+    const { name, email, subject, text } = this.state;
     return (
       <div onClick={this.hide} className="About-outer">
         <div className="About">
@@ -113,7 +118,7 @@ export default class About extends Component {
             </div>
             <br />
 
-            <ReactQuill placeholder="...type your message here" />
+            <ReactQuill name='message' onChange={this.quillChange} value={text} placeholder="...type your message here" />
             <br />
             <br />
             <input type="submit" value="Send Message" />

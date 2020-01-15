@@ -11,10 +11,7 @@ export default class Engine extends Component {
   render() {
     return (
       <div onClick={this.hide} className="Engine_room">
-        <div className="Engine">
-          <div className='matt-pic' />
-          <h1>ENGINE.</h1>
-        </div>
+        
         <h2>Precision Engines</h2>
         <div className="engine-info">
           <div className="engine-list">

@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 75vh;
 }
 .matt-pic {
   background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566577344/opwdtqaee01zpygipyjz.jpg");

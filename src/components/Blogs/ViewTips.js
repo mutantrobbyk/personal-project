@@ -46,6 +46,7 @@ export default class ViewTips extends Component {
     this.props.history.push("/techtips");
   };
   render() {
+    console.log(this.props)
       let {category, title, body, url, images} = this.state
       return (
           <div onClick={this.hide} className='outer-box'>
