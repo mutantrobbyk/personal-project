@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'React'
 import './ServiceForm.css'
-import ReactQuill from 'react-quill'
 
 const ServiceForm = () => {
     const [name, setName] = useState('')
@@ -18,7 +17,7 @@ const ServiceForm = () => {
              <input onChange={() => setMake(e.target.value)} type="text"/>
              <input onChange={() => setModel(e.target.value)} type="text"/>
              <input onChange={() => setYear(e.target.value)} type="text"/>
-             <ReactQuill placeholder="...type your message here" />
+             <textarea placeholder="...type your message here" />
          </form>
      )
 }

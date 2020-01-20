@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import "./About.css";
 import axios from "axios";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 
 export default class About extends Component {
   state = {
     name: "",
     email: "",
     subject: "",
-    text: ""
+    text: "",
+    message: ''
   };
   hide() {
     const drop = document.getElementById("dropdown");
@@ -33,13 +32,8 @@ export default class About extends Component {
       });
     });
   };
-  quillChange = value => {
-    this.setState({
-      text: value
-    })
-  }
   render() {
-    const { name, email, subject, text } = this.state;
+    const { name, email, subject, message } = this.state;
     return (
       <div onClick={this.hide} className="About-outer">
         <div className="About">
@@ -118,7 +112,7 @@ export default class About extends Component {
             </div>
             <br />
 
-            <ReactQuill name='message' onChange={this.quillChange} value={text} placeholder="...type your message here" />
+            <textarea name='message' onChange={e => this.handleInput(e)} value={message} placeholder="...type your message here" />
             <br />
             <br />
             <input type="submit" value="Send Message" />
