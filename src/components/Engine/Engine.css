@@ -69,8 +69,8 @@
 .engine-pics img {
   background-size: cover;
   background-position: center;
-  height: 100%;
   width: 100%;
+  height: auto;
   position: absolute;
   animation-name: engines;
   animation-timing-function: linear;

@@ -50,8 +50,8 @@ form {
 .about-pics img {
     background-size: cover;
     margin-top: 20px;
-    height: 100%;
     width: 100%;
+    height: auto;
     position: absolute;
     animation-name: bikes;
     animation-timing-function: linear;
