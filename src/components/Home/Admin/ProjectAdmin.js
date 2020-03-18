@@ -4,6 +4,7 @@ import axios from "axios";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import {connect} from 'react-redux'
+import {clearUserInfo} from '../../../ducks/reducer'
 import Cloudinary from "../../Blogs/Cloudinary";
 
 class ProjectAdmin extends Component {
@@ -28,16 +29,27 @@ class ProjectAdmin extends Component {
     }
 }
   componentDidMount() {
+    this.checkSession()
     this.getAllProjects();
   }
+  checkSession = () => {
+    axios.get('/auth/currentuser').then(res => {
+      console.log(res.data)
+      if (res.data.message === "No User On Session"){
+        this.props.clearUserInfo()
+        this.checkAdmin()
+      }
+    })
+  }
   componentDidUpdate() {
-    this.checkAdmin()
+    this.checkSession()
+    this.checkAdmin();
   }
   checkAdmin = () => {
-      if (!this.props.is_admin) {
-        this.props.history.push(`/auth`)
-      }
-  }
+    if (!this.props.is_admin) {
+      this.props.history.push(`/auth`);
+    }
+  };
   getUrl = url => {
     this.setState({
       cover_image: url
@@ -205,4 +217,4 @@ function mapStateToProps(Redux) {
     {is_admin}
   )
 }
-export default connect(mapStateToProps)(ProjectAdmin)
+export default connect(mapStateToProps, {clearUserInfo})(ProjectAdmin)

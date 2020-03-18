@@ -5,8 +5,10 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import Cloudinary from "../../Blogs/Cloudinary";
 import Cloudinary2 from "../../Blogs/Cloudinary2";
+import { clearUserInfo } from "../../../ducks/reducer";
+import {connect} from 'react-redux'
 
-export default class BlogEdit extends Component {
+class BlogEdit extends Component {
   //have access to project_id from match.params
   constructor(props) {
     super(props);
@@ -17,38 +19,58 @@ export default class BlogEdit extends Component {
       sub_3: "",
       body: "",
       cover_image: "",
-      images: [],
+      images: []
     };
     this.handleChange2 = this.handleChange2.bind(this);
   }
-  hide () {
-    const drop = document.getElementById('dropdown')
-    if (!drop.classList.contains('hide')) {
-        drop.classList.add('hide')
+  hide() {
+    const drop = document.getElementById("dropdown");
+    if (!drop.classList.contains("hide")) {
+      drop.classList.add("hide");
     }
-}
+  }
+
+  checkSession = () => {
+    axios.get("/auth/currentuser").then(res => {
+      console.log(res.data);
+      if (res.data.message === "No User On Session") {
+        this.props.clearUserInfo();
+        this.checkAdmin();
+      }
+    });
+  };
+  componentDidUpdate() {
+    this.checkSession();
+    this.checkAdmin();
+  }
+  checkAdmin = () => {
+    if (!this.props.is_admin) {
+      this.props.history.push(`/auth`);
+    }
+  };
   handleChange2(value) {
     this.setState({ body: value });
   }
   componentDidMount() {
+    this.checkSession();
     this.getProjects();
-    console.log(this.images)
+    console.log(this.images);
   }
   getImage = image => {
-      console.log(image)
-      if (this.state.images) {
-          this.setState({
-            images: [...this.state.images, image]
-          });
-      }
-      else {console.log(false)}
+    console.log(image);
+    if (this.state.images) {
+      this.setState({
+        images: [...this.state.images, image]
+      });
+    } else {
+      console.log(false);
+    }
     console.log(this.state);
   };
   deleteImage = id => {
-      let body = {project_id: this.state.project_id}
-      console.log(this.state.project_id)
-    axios.delete(`/blog/images/${id}`, body).then(res => {
-    });
+    let body = { project_id: this.state.project_id };
+    console.log(this.state.project_id);
+    axios.delete(`/blog/images/${id}`, body).then(res => {});
   };
   getUrl = url => {
     this.setState({
@@ -63,14 +85,14 @@ export default class BlogEdit extends Component {
         console.log(res.data);
         //filter through the array and take off the image and put it into an array
         //returns image if it exists
-         // eslint-disable-next-line
+        // eslint-disable-next-line
         let newArray = await res.data.map(el => {
-            console.log(el)
-           if (el.image !== '' && el.image !== null) {
-               return {image: el.image, id: el.id}
-           }
-        })
-        console.log(newArray.length)
+          console.log(el);
+          if (el.image !== "" && el.image !== null) {
+            return { image: el.image, id: el.id };
+          }
+        });
+        console.log(newArray.length);
         this.setState({
           project_id: res.data[0].project_id,
           title: res.data[0].title,
@@ -155,7 +177,11 @@ export default class BlogEdit extends Component {
             images.map(el => {
               return (
                 <div key={el.id}>
-                  <img className="multiple_img" src={el.image ? el.image : el} alt="" />
+                  <img
+                    className="multiple_img"
+                    src={el.image ? el.image : el}
+                    alt=""
+                  />
                   <button onClick={() => this.deleteImage(el.id)}>
                     DELETE IMAGE
                   </button>
@@ -170,3 +196,8 @@ export default class BlogEdit extends Component {
     );
   }
 }
+function mapStateToProps(Redux) {
+  const { is_admin } = Redux;
+  return { is_admin };
+}
+export default connect(mapStateToProps, { clearUserInfo })(BlogEdit);

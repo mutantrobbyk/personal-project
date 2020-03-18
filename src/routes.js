@@ -14,7 +14,8 @@ import BlogEdit from "./components/Home/Admin/BlogEdit";
 import TechEdit from "./components/Home/Admin/TechEdit";
 import ViewProject from "./components/Blogs/ViewProject";
 import ViewTips from "./components/Blogs/ViewTips";
-import Services from './components/Services/Services'
+import Services from './components/Services/Services';
+import ServicesAdmin from './components/Home/Admin/ServicesAdmin';
 
 export default (
   <Switch>
@@ -33,5 +34,7 @@ export default (
     <Route path="/techtips/viewtip/:tip_id" component={ViewTips} />
     <Route path="/techtips" component={TechTips} />
     <Route path="/about" component={About} />
+    <Route path="/services-admin" component={ServicesAdmin} />
+
   </Switch>
 );
