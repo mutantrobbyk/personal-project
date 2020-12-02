@@ -78,7 +78,6 @@ class BlogEdit extends Component {
     });
   };
   getProjects = () => {
-    console.log("function hit");
     axios
       .get(`/blog/getAllProjects/${this.props.match.params.project_id}`)
       .then(async res => {
@@ -92,7 +91,6 @@ class BlogEdit extends Component {
             return { image: el.image, id: el.id };
           }
         });
-        console.log(newArray.length);
         this.setState({
           project_id: res.data[0].project_id,
           title: res.data[0].title,
