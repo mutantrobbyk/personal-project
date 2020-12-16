@@ -32,18 +32,8 @@
   margin-left: 8%;
   font-size: 1.75rem;
 }
-.project_gallery {
-  border: 9px solid rgb(219, 5, 5);
-  color: rgb(219, 5, 5);
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 8%;
-  margin-bottom: 15%;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 10px;
+.project_gallery_text {
+ color: white;
 }
 .mission_statement {
   color: rgb(219, 5, 5);
