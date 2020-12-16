@@ -6,8 +6,60 @@ import { setUser } from "../../ducks/reducer";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core/styles";
 import "./Nav.css";
 
+const styles = {
+  button: {
+    boxShadow: "none",
+    height: "2rem",
+    width: "2rem",
+    background: "none",
+  },
+  menu_item: {
+    backgroundColor: "rgb(36, 33, 33)",
+    "&:hover": {
+      backgroundColor: "rgb(219, 5, 5)",
+    },
+    opacity: 0.8,
+  },
+  menu_image: {
+    fontSize: "2rem",
+    color: "white",
+    hover: "disable",
+  },
+  menu: {
+    opacity: 0.8,
+    '&:active': {
+      outline: 'none',                                                                   
+    }
+  },
+};
+
+const StyledMenu = withStyles({
+  paper: {
+    borderTop: "2px solid red",
+    outline: 'none'
+  },
+  list:{
+    outline: 'none',                                                                   
+  }
+})((props) => {
+  return <Menu
+    elevation={0}
+    getContentAnchorEl={null}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "center",
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "center",
+    }}
+    {...props}
+  />
+  });
 class Nav extends Component {
   state = {
     anchorEl: null,
@@ -36,7 +88,8 @@ class Nav extends Component {
   }
 
   render() {
-    const {anchorEl} = this.state
+    const { anchorEl } = this.state;
+    const { classes } = this.props;
     return (
       <div className="Nav">
         <div onClick={this.hide} className="syndicate_lion">
@@ -47,32 +100,65 @@ class Nav extends Component {
           ></img>
         </div>
         <Button
-          aria-controls="simple-menu"
+          aria-controls="customized-menu"
           aria-haspopup="true"
           onClick={this.handleClick}
+          className={clsx(classes.button)}
         >
-          <i className="fas fa-bars" />
+          <i className={clsx(classes.menu_image, "fas fa-bars")} />
         </Button>
-        <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={this.handleClose}>
-          <MenuItem><Link to="/services">
+        <StyledMenu
+          className={clsx(classes.menu, "removeOutline")}
+          id="customized-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={this.handleClose}
+        >
+          <MenuItem
+            onClick={this.handleClose}
+            className={clsx(classes.menu_item)}
+          >
+            <Link to="/services">
               <li>Services</li>
-            </Link></MenuItem>
-          <MenuItem><Link to="/projects">
+            </Link>
+          </MenuItem>
+          <MenuItem
+            onClick={this.handleClose}
+            className={clsx(classes.menu_item)}
+          >
+            <Link to="/projects">
               <li>Projects</li>
-            </Link></MenuItem>
-          <MenuItem><Link to="/techtips">
+            </Link>
+          </MenuItem>
+          <MenuItem
+            onClick={this.handleClose}
+            className={clsx(classes.menu_item)}
+          >
+            <Link to="/techtips">
               <li>Shop Talk</li>
-            </Link></MenuItem>
-          <MenuItem><Link to="/about">
+            </Link>
+          </MenuItem>
+          <MenuItem
+            onClick={this.handleClose}
+            className={clsx(classes.menu_item)}
+          >
+            <Link to="/about">
               <li>About</li>
-            </Link></MenuItem>
-          <MenuItem><Link to="/">
+            </Link>
+          </MenuItem>
+          <MenuItem
+            onClick={this.handleClose}
+            className={clsx(classes.menu_item)}
+          >
+            <Link to="/">
               <li>Home</li>
-            </Link></MenuItem>
-        </Menu>
+            </Link>
+          </MenuItem>
+        </StyledMenu>
       </div>
     );
   }
 }
 
-export default connect(null, { setUser })(withRouter(Nav));
+export default connect(null, { setUser })(withRouter(withStyles(styles)(Nav)));

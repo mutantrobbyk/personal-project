@@ -1,29 +1,46 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-// import MainImage from '../images/m45a2849.jpg'
+import Button from "@material-ui/core/Button";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core/styles";
 import Spring from "../images/noun_suspension_378329.png";
 import Piston from "../images/noun_Piston_103816 (1).png";
 import Pic from "../images/noun_Photo_1827280 (1).png";
 import Wrench from "../images/noun_Wrench_2558227 (1).png";
 
-export default class Home extends Component {
-  hide () {
-    const drop = document.getElementById('dropdown')
-    if (!drop.classList.contains('hide')) {
-        drop.classList.add('hide')
-    }
-}
+const styles = {
+  project_gallery: {
+    backgroundColor: "rgb(219, 5, 5)",
+    textAlign: "center",
+    position: "absolute",
+    bottom: "0",
+    right: "0",
+    marginRight: "8%",
+    marginBottom: "15%",
+    color: "white",
+    opacity: "80%",
+    cursor: "pointer",
+    padding: "10px",
+    fontFamily: "Alegreya Sans, sans-serif",
+    textPrimary: "white"
+  },
+  textPrimary: {
+    color: "white"
+  }
+};
+ class Home extends Component {
   render() {
+    const {classes} = this.props
     return (
-      <div onClick={this.hide}className="Home">
+      <div className="Home">
         <div className="main_image">
           <div className="mainPageImages" />
           <h1 className="SD">SYNDICATE DEVELOPMENT</h1>
           <p className="sub_1">Performance, Passion, Precision.</p>
-          <Link to="/projects">
-            <p className="project_gallery">PROJECT GALLERY</p>
-          </Link>
+          <Button color="primary" variant="text" className={clsx(classes.project_gallery, classes.textPrimary)}>
+            <Link to="/projects">PROJECT GALLERY</Link>
+          </Button>
         </div>
         <hr />
         <div className="mission_container">
@@ -37,7 +54,14 @@ export default class Home extends Component {
             </b>
           </h4>
           <p className="description">
-          From simple upgrades to full race ready bikes, Syndicate Development is here to cater to all of your motorcycle needs.  With state of the art equipment and a performance dyno room, we are here to get your machine performing better than you even thought possible.  We specialize in custom suspension, engine performance, and ECU tuning, but we also offer things from regular services to full race prep. Give us a call or send us a message and let us know what we can do for you!
+            From simple upgrades to full race ready bikes, Syndicate Development
+            is here to cater to all of your motorcycle needs. With state of the
+            art equipment and a performance dyno room, we are here to get your
+            machine performing better than you even thought possible. We
+            specialize in custom suspension, engine performance, and ECU tuning,
+            but we also offer things from regular services to full race prep.
+            Give us a call or send us a message and let us know what we can do
+            for you!
           </p>
         </div>
         <hr />
@@ -67,9 +91,9 @@ export default class Home extends Component {
             </div>
           </Link>
         </div>
-        <hr/>
+        <hr />
         <div className="contact">
-          <div className="mainPageImages_1"   />
+          <div className="mainPageImages_1" />
           <h1>READY TO START BUILDING?</h1>
           <Link to="/about">
             <p>CONTACT THE SHOP</p>
@@ -82,3 +106,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default withStyles(styles)(Home)
