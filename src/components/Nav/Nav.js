@@ -31,35 +31,37 @@ const styles = {
   },
   menu: {
     opacity: 0.8,
-    '&:active': {
-      outline: 'none',                                                                   
-    }
+    "&:active": {
+      outline: "none",
+    },
   },
 };
 
 const StyledMenu = withStyles({
   paper: {
     borderTop: "2px solid red",
-    outline: 'none'
+    outline: "none",
   },
-  list:{
-    outline: 'none',                                                                   
-  }
+  list: {
+    outline: "none",
+  },
 })((props) => {
-  return <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: "bottom",
-      horizontal: "center",
-    }}
-    transformOrigin={{
-      vertical: "top",
-      horizontal: "center",
-    }}
-    {...props}
-  />
-  });
+  return (
+    <Menu
+      elevation={0}
+      getContentAnchorEl={null}
+      anchorOrigin={{
+        vertical: "bottom",
+        horizontal: "center",
+      }}
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "center",
+      }}
+      {...props}
+    />
+  );
+});
 class Nav extends Component {
   state = {
     anchorEl: null,
@@ -92,7 +94,7 @@ class Nav extends Component {
     const { classes } = this.props;
     return (
       <div className="Nav">
-        <div onClick={this.hide} className="syndicate_lion">
+        <div className="syndicate_lion">
           <img
             src="https://res.cloudinary.com/datcltouj/image/upload/v1566926793/xupuooj60ihaop22wvbk.png"
             alt=""

@@ -3,7 +3,7 @@ import "./AdminLanding.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import {clearUserInfo} from '../../../ducks/reducer'
+import { clearUserInfo } from "../../../ducks/reducer";
 
 class AdminLanding extends Component {
   userLogout = () => {
@@ -12,26 +12,20 @@ class AdminLanding extends Component {
       this.props.history.push("/");
     });
   };
-  hide() {
-    const drop = document.getElementById("dropdown");
-    if (!drop.classList.contains("hide")) {
-      drop.classList.add("hide");
-    }
-  }
   componentDidMount() {
-    this.checkSession()
+    this.checkSession();
   }
   checkSession = () => {
-    axios.get('/auth/currentuser').then(res => {
-      console.log(res.data)
-      if (res.data.message === "No User On Session"){
-        this.props.clearUserInfo()
-        this.checkAdmin()
+    axios.get("/auth/currentuser").then((res) => {
+      console.log(res.data);
+      if (res.data.message === "No User On Session") {
+        this.props.clearUserInfo();
+        this.checkAdmin();
       }
-    })
-  }
+    });
+  };
   componentDidUpdate() {
-    this.checkSession()
+    this.checkSession();
     this.checkAdmin();
   }
   checkAdmin = () => {
@@ -41,7 +35,7 @@ class AdminLanding extends Component {
   };
   render() {
     return (
-      <div onClick={this.hide} className="AdminLanding">
+      <div className="AdminLanding">
         {this.checkAdmin()}
         <br />
         <Link to="/admin/projects">
@@ -62,4 +56,4 @@ function mapStateToProps(Redux) {
   const { is_admin } = Redux;
   return { is_admin };
 }
-export default connect(mapStateToProps, {clearUserInfo})(AdminLanding);
+export default connect(mapStateToProps, { clearUserInfo })(AdminLanding);

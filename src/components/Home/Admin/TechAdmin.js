@@ -14,16 +14,10 @@ class TechAdmin extends Component {
       category: "",
       title: "",
       body: "",
-      url: ""
+      url: "",
     };
     this.handleChange2 = this.handleChange2.bind(this);
   }
-  hide () {
-    const drop = document.getElementById('dropdown')
-    if (!drop.classList.contains('hide')) {
-        drop.classList.add('hide')
-    }
-}
   handleChange2(value) {
     this.setState({ body: value });
   }
@@ -38,35 +32,35 @@ class TechAdmin extends Component {
       this.props.history.push(`/auth`);
     }
   };
-  getUrl = url => {
+  getUrl = (url) => {
     this.setState({
-      url: url
+      url: url,
     });
   };
   getAllTips = () => {
-    axios.get("/tips/getAllTips").then(res => {
+    axios.get("/tips/getAllTips").then((res) => {
       this.setState({
-        tips: res.data
+        tips: res.data,
       });
     });
   };
-  createTip = body => {
-    axios.post("/tips/createNewTips", body).then(res => {
+  createTip = (body) => {
+    axios.post("/tips/createNewTips", body).then((res) => {
       this.setState({
-        tips: res.data
+        tips: res.data,
       });
     });
   };
-  deleteTip = tip_id => {
-    axios.delete(`/tips/${tip_id}`).then(res => {
+  deleteTip = (tip_id) => {
+    axios.delete(`/tips/${tip_id}`).then((res) => {
       this.setState({
-        tips: res.data
+        tips: res.data,
       });
     });
   };
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
   goBack = () => {
@@ -75,56 +69,56 @@ class TechAdmin extends Component {
   render() {
     const { category, title, body, url } = this.state;
     return (
-      <div className="TechAdmin" onClick={this.hide}>
+      <div className="TechAdmin">
         <div className="tips-outer-box">
-          {this.state.tips.map(el => {
+          {this.state.tips.map((el) => {
             return (
               <div className="admin-tips" key={el.tip_id}>
-                <div className='pic_box'>
+                <div className="pic_box">
                   <img className="tips-pic" src={el.url} alt="" />
                 </div>
-                <div className='cat-title'>
-                <h5>{el.category}</h5>
-                <h3>{el.title}</h3>
+                <div className="cat-title">
+                  <h5>{el.category}</h5>
+                  <h3>{el.title}</h3>
                 </div>
-                <div className='tip-body'>
-                <section dangerouslySetInnerHTML={{ __html: el.body }} />
+                <div className="tip-body">
+                  <section dangerouslySetInnerHTML={{ __html: el.body }} />
                 </div>
-                <div className='edit-del'>
-                <button
-                  onClick={() =>
-                    this.props.history.push(`/admin/tech/edit/${el.tip_id}`)
-                  }
-                >
-                  EDIT
-                </button>
-                <button
-                  onClick={() => {
-                    this.deleteTip(el.tip_id);
-                  }}
-                >
-                  DELETE
-                </button>
+                <div className="edit-del">
+                  <button
+                    onClick={() =>
+                      this.props.history.push(`/admin/tech/edit/${el.tip_id}`)
+                    }
+                  >
+                    EDIT
+                  </button>
+                  <button
+                    onClick={() => {
+                      this.deleteTip(el.tip_id);
+                    }}
+                  >
+                    DELETE
+                  </button>
                 </div>
               </div>
             );
           })}
         </div>
-        <hr/>
+        <hr />
         <h2>Create a New Tip</h2>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <div>
           <input
             value={this.state.category}
-            onChange={e => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
             type="text"
             placeholder="category"
             name="category"
           />
           <input
             value={this.state.title}
-            onChange={e => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
             type="text"
             placeholder="title"
             name="title"
@@ -132,7 +126,7 @@ class TechAdmin extends Component {
           <ReactQuill value={this.state.body} onChange={this.handleChange2} />
           <input
             value={this.state.url}
-            onChange={e => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
             type="text"
             placeholder="url"
             name="url"
@@ -145,13 +139,13 @@ class TechAdmin extends Component {
                 category: "",
                 title: "",
                 body: "",
-                url: ""
+                url: "",
               });
             }}
           >
             CREATE TIP
           </button>
-          <br/>
+          <br />
           <button onClick={() => this.goBack()}>BACK TO ADMIN</button>
         </div>
       </div>
