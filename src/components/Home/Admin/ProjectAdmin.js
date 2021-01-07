@@ -22,12 +22,6 @@ class ProjectAdmin extends Component {
     };
     this.handleChange2 = this.handleChange2.bind(this);
   }
-  hide () {
-    const drop = document.getElementById('dropdown')
-    if (!drop.classList.contains('hide')) {
-        drop.classList.add('hide')
-    }
-}
   componentDidMount() {
     this.checkSession()
     this.getAllProjects();
@@ -88,46 +82,47 @@ class ProjectAdmin extends Component {
   };
   render() {
     const { title, sub_1, sub_2, sub_3, body, cover_image } = this.state;
+    const currentProjects = this.state.projects.map(el => {
+      return (
+        <div className="admin-projects" key={el.project_id}>
+          <div className='box_1'>
+            <img className="moto" src={el.cover_image} alt="Project" />
+          </div>
+          <div className='box_2'>
+            <h3>{el.title}</h3>
+            <p>Year: {el.sub_1}</p>
+            <p>Make: {el.sub_2}</p>
+            <p>Model: {el.sub_3}</p>
+          </div>
+          <div className='box_3'>
+            <section dangerouslySetInnerHTML={{ __html: el.body }} />
+          </div>
+          <div className='box_4'>
+            <button
+              onClick={() =>
+                this.props.history.push(
+                  `/admin/projects/edit/${el.project_id}`
+                )
+              }
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => {
+                this.deleteProject(el.project_id);
+              }}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      );
+    })
+    const noProjects = <div className="empty-blog">Add Some Projects Below</div>
     return (
-      
-      <div className="ProjectAdmin" onClick={this.hide}>
+      <div className="ProjectAdmin">
         <div className="admin-outer-box">
-          {this.state.projects.map(el => {
-            return (
-              <div className="admin-projects" key={el.project_id}>
-                <div className='box_1'>
-                  <img className="moto" src={el.cover_image} alt="Project" />
-                </div>
-                <div className='box_2'>
-                  <h3>{el.title}</h3>
-                  <p>Year: {el.sub_1}</p>
-                  <p>Make: {el.sub_2}</p>
-                  <p>Model: {el.sub_3}</p>
-                </div>
-                <div className='box_3'>
-                  <section dangerouslySetInnerHTML={{ __html: el.body }} />
-                </div>
-                <div className='box_4'>
-                  <button
-                    onClick={() =>
-                      this.props.history.push(
-                        `/admin/projects/edit/${el.project_id}`
-                      )
-                    }
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => {
-                      this.deleteProject(el.project_id);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+          {this.state.projects.length > 0 ? currentProjects: noProjects}
         </div>
           <hr/>
           <h2>Create a New Post</h2>

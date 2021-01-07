@@ -8,34 +8,28 @@ export default class About extends Component {
     email: "",
     subject: "",
     text: "",
-    message: ''
+    message: "",
   };
-  hide() {
-    const drop = document.getElementById("dropdown");
-    if (!drop.classList.contains("hide")) {
-      drop.classList.add("hide");
-    }
-  }
-  handleInput = e => {
+  handleInput = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
-  sendEmail = body => {
+  sendEmail = (body) => {
     // const {name, email, subject, text} = this.state
-    axios.post("/api/email", body).then(res => {
+    axios.post("/api/email", body).then((res) => {
       this.setState({
         name: "",
         email: "",
         subject: "",
-        text: ""
+        text: "",
       });
     });
   };
   render() {
     const { name, email, subject, message } = this.state;
     return (
-      <div onClick={this.hide} className="About-outer">
+      <div className="About-outer">
         <div className="About">
           <div className="about-pics">
             <img
@@ -112,7 +106,12 @@ export default class About extends Component {
             </div>
             <br />
 
-            <textarea name='message' onChange={e => this.handleInput(e)} value={message} placeholder="...type your message here" />
+            <textarea
+              name="message"
+              onChange={(e) => this.handleInput(e)}
+              value={message}
+              placeholder="...type your message here"
+            />
             <br />
             <br />
             <input type="submit" value="Send Message" />

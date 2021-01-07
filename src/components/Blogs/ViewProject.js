@@ -10,14 +10,8 @@ export default class ViewProject extends Component {
     sub_3: "",
     body: "",
     cover_image: "",
-    images: []
+    images: [],
   };
-  hide () {
-    const drop = document.getElementById('dropdown')
-    if (!drop.classList.contains('hide')) {
-        drop.classList.add('hide')
-    }
-}
   componentDidMount() {
     this.getProject();
     console.log(this.images);
@@ -25,10 +19,10 @@ export default class ViewProject extends Component {
   getProject = () => {
     axios
       .get(`/blog/getAllProjects/${this.props.match.params.project_id}`)
-      .then(async res => {
+      .then(async (res) => {
         console.log(res.data);
         // eslint-disable-next-line
-        let newArray = await res.data.map(el => {
+        let newArray = await res.data.map((el) => {
           console.log(el);
           if (el.image !== "" && el.image !== null) {
             return { image: el.image, id: el.id };
@@ -43,7 +37,7 @@ export default class ViewProject extends Component {
           sub_3: res.data[0].sub_3,
           body: res.data[0].body,
           cover_image: res.data[0].cover_image,
-          images: newArray
+          images: newArray,
         });
       });
   };
@@ -53,7 +47,7 @@ export default class ViewProject extends Component {
   render() {
     let { title, sub_1, sub_2, sub_3, body, cover_image, images } = this.state;
     return (
-      <div onClick={this.hide} className="outer_box">
+      <div className="outer_box">
         <div className="inner_box">
           <div className="third_box">
             <div className="title">
@@ -85,7 +79,7 @@ export default class ViewProject extends Component {
             </div>
             <div className="bottom_pictures">
               <div>
-                {images.map(el => {
+                {images.map((el) => {
                   return (
                     <div>
                       <img className="more_pics" src={el.image} alt="" />
