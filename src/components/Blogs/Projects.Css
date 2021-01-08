@@ -5,13 +5,13 @@
 	justify-content: center;
 	align-items: stretch;
     align-content: space-around;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .projects_head {
     position: relative;
     text-align: center;
     color: black;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .projects_head img {
     width: 100vw;

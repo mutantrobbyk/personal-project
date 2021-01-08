@@ -52,30 +52,30 @@ export default class About extends Component {
 
         <div className="about-bottom">
           <h2>SYNDICATE DEVELOPMENT</h2>
-          <div className="contact">
-            <h3>Shop Phone: &nbsp; 208-251-9536 &nbsp;</h3>
-            <h3>&nbsp; || &nbsp;</h3>
-            <h3>
-              &nbsp; Shop Address: &nbsp; 1801 N. Arthur Ave., Pocatello, ID,
-              83204
-            </h3>
+          <div className="shop-contact">
+            <div>
+              <p>Shop Phone: 208-251-9536</p>
+            </div>
+            <div>
+              <p>Shop Address: <a href="https://goo.gl/maps/k6PjesVBsAqDArb27">1801 N. Arthur Ave., Pocatello, ID, 83204</a></p>
+            </div>
           </div>
-          <h4>
-            Doug Haskett has been involved with motorcycles and racing for most
-            of his life. &nbsp; Since 1998 he has been perfecting his skills in
-            the mechanics of the machine, &nbsp;learning the fine craft of
-            engine, &nbsp; suspension and ECU tuning, &nbsp; and overall bike
-            fixes, &nbsp; upgrades and performance. &nbsp; He has worked at the
-            highest levels of dirt bike racing, &nbsp; having experience with
-            professional Supercross and Motocross teams such as Rocky Mountain
-            ATV MC and High Desert Racing as a mechanic. &nbsp;He has also
-            worked with many pro riders in testing and has the experience to do
-            some testing himself. &nbsp; He continues to ride and race, and his
-            lifelong passion for bikes combined with his knowledge and state of
-            the art performance equipment and dyno room make him a highly
-            sought-after mechanic today.&nbsp; Have a question? &nbsp; Send a
-            message!
-          </h4>
+          <div className="about-message"><p>
+          Doug Haskett has been involved with motorcycles and racing for most
+          of his life. Since 1998 he has been perfecting his skills in
+          the mechanics of the machine,learning the fine craft of
+          engine, suspension and ECU tuning, and overall bike
+          fixes, upgrades and performance. He has worked at the
+          highest levels of dirt bike racing, having experience with
+          professional Supercross and Motocross teams such as Rocky Mountain
+          ATV MC and High Desert Racing as a mechanic.He has also
+          worked with many pro riders in testing and has the experience to do
+          some testing himself. He continues to ride and race, and his
+          lifelong passion for bikes combined with his knowledge and state of
+          the art performance equipment and dyno room make him a highly
+          sought-after mechanic today Have a question? Send a
+          message!
+          </p></div>
           <h2 className="shop_contact">CONTACT THE SHOP</h2>
           <form
             method="POST"

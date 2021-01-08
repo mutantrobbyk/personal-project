@@ -5,13 +5,13 @@
     justify-content: center;
     align-items: stretch;
     align-content: space-around;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .tips_head {
     position: relative;
     text-align: center;
     color: black;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .top-image {
     background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566660386/rwfr07xgrtyehs7tqbcv.jpg");
