@@ -11,7 +11,7 @@
     padding-left: 20px;
     padding-right: 20px;
     z-index: 5;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .syndicate_lion {
     background-image: url('https://res.cloudinary.com/datcltouj/image/upload/v1566925028/rcl6z1llalr6gc8zwj9n.png');
@@ -47,7 +47,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .hide {
     position: absolute;
@@ -64,7 +64,7 @@ li {
     color: white;
     cursor: pointer;
     transition: .4s;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 a{
     text-decoration: none;

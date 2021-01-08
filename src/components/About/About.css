@@ -1,5 +1,5 @@
 .About-outer {
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,61 +44,67 @@ form {
 .about-pics {
   height: 100%;
   width: 100%;
-  position:relative;
+  position: relative;
   display: flex;
 }
 .about-pics img {
-    background-size: cover;
-    margin-top: 20px;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    animation-name: bikes;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-duration: 9s;
+  background-size: cover;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  animation-name: bikes;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 9s;
 }
 .one {
-    animation-delay: 6s;
+  animation-delay: 6s;
 }
 .two {
-    animation-delay: 3s;
+  animation-delay: 3s;
 }
 .three {
-    animation-delay: 0;
+  animation-delay: 0;
 }
 .about-bottom {
-    height: 50%;
-    width:80%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-evenly;
+  height: 50%;
+  width: 80%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align:justify;
+  justify-content: space-evenly;
 }
-.contact {
-    display: flex;
-    flex-direction: row;
-    color: black;
-    justify-content: space-between;
+.shop-contact {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  justify-content: space-between;
+  width: 100%;
 }
+.shop-contact a:visited { text-decoration: none; color: black;}
+.shop-contact a:hover { text-decoration: none; color:blue; }
+.shop-contact a:focus { text-decoration: none; color:blue; }
+
+.about-message {
+  width: 100%;
+}
+
 .about-input {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
-@media (max-width: 1000px){
-    .About {
-      width: 600px;
-      height: 400px;
-    }
+@media (max-width: 1000px) {
+  .About {
+    width: 600px;
+    height: 400px;
+  }
 }
 @media (max-width: 650px) {
   .About {
     width: 400px;
     height: 300px;
-  }
-  .contact h3 {
-    /* font-size: .9rem; */
   }
 }

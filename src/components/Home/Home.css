@@ -2,7 +2,7 @@
   position: relative;
   text-align: left;
   color: white;
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mainPageImages {
@@ -38,7 +38,7 @@
 .mission_statement {
   color: rgb(219, 5, 5);
   font-size: 4rem;
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 15px;
 }
 hr {
@@ -46,7 +46,7 @@ hr {
   border-top: 3px solid rgb(25, 25, 189);
 }
 .tagline {
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   margin: 0;
 }
@@ -77,14 +77,14 @@ hr {
 .icons h3 {
   margin: 0;
   color: black;
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .contact {
   /* margin: 40px 0; */
   position: relative;
   text-align: left;
   color: white;
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .mainPageImages_1 {
   background-image: url("https://res.cloudinary.com/datcltouj/image/upload/v1566836472/gimrzsuvathl7rcifzgi.jpg");
