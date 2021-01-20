@@ -63,18 +63,18 @@ export default class About extends Component {
           <div className="about-message"><p>
           Doug Haskett has been involved with motorcycles and racing for most
           of his life. Since 1998 he has been perfecting his skills in
-          the mechanics of the machine,learning the fine craft of
+          the mechanics of the machine, learning the fine craft of
           engine, suspension and ECU tuning, and overall bike
           fixes, upgrades and performance. He has worked at the
           highest levels of dirt bike racing, having experience with
           professional Supercross and Motocross teams such as Rocky Mountain
-          ATV MC and High Desert Racing as a mechanic.He has also
+          ATV MC and High Desert Racing as a mechanic. He has also
           worked with many pro riders in testing and has the experience to do
           some testing himself. He continues to ride and race, and his
           lifelong passion for bikes combined with his knowledge and state of
           the art performance equipment and dyno room make him a highly
-          sought-after mechanic today Have a question? Send a
-          message!
+          sought-after mechanic today. <strong>Have a question? Send a
+          message!</strong>
           </p></div>
           <h2 className="shop_contact">CONTACT THE SHOP</h2>
           <form
