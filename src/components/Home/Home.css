@@ -52,6 +52,7 @@ hr {
 }
 .description {
   padding: 0 8vw;
+  font-family: 'Montserrat', sans-serif;
 }
 .icons {
   display: flex;
