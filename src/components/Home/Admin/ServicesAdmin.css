@@ -1,3 +1,23 @@
 .services-admin {
-    display: flex
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.services-headline {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 95vw;
+    height: 15vh;
+    border: 1.5px solid blue;
+    border-radius: 5px;
+}
+
+.services-headline-input {
+    width: 70vw;
+    height: 80%;
+    overflow: wrap;
 }

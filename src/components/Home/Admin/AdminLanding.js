@@ -8,8 +8,7 @@ import { clearUserInfo } from "../../../ducks/reducer";
 class AdminLanding extends Component {
   userLogout = () => {
     axios.delete("/auth/logout").then(() => {
-      console.log("Logged out");
-      this.props.history.push("/");
+      this.props.history111.push("/");
     });
   };
   componentDidMount() {
