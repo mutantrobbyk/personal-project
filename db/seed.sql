@@ -56,3 +56,8 @@ image text
 update credentials 
 set is_admin = true
 where user_id = 1;
+
+CREATE TABLE sd_services_headline(
+id SERIAL PRIMARY KEY,
+headline TEXT
+);

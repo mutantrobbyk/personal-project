@@ -7,6 +7,7 @@ const session = require('express-session')
 const authCtrl = require('./controllers/authController')
 const projCtrl = require('./controllers/projectController')
 const tipCtrl = require('./controllers/tipsController')
+const servicesController = require('./controllers/servicesController')
 const ctrl = require('./controllers/controller')
 const path = require('path');
 
@@ -46,6 +47,11 @@ app.get('/tips/getAllTips/:tip_id', tipCtrl.getTipById)
 app.post('/api/email',ctrl.email)
 app.get('/tips/getAllTips/pics/:tip_id', tipCtrl.getPicsById)
 app.post('/techtips/morepics/:tip_id', tipCtrl.addMorePics)
+
+//services endpoints
+app.get('/api/services/headline', servicesController.getServicesHeadline);
+app.put('/api/services/headline', servicesController.updateServicesHeadline);
+
 app.get('*', (req, res)=>{
   res.sendFile(path.join(__dirname, '../build/index.html'));
 });

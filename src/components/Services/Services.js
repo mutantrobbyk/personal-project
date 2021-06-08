@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios'
 import "./Services.css";
 import Engine from "../Engine/Engine";
 import Suspension from "../Suspension/Suspension";
 import ECU from "../ECU/ECU";
 
 const Services = () => {
+  const [serviceHeadline, getServiceHeadline] = useState('')
+  useEffect(() => {
+    axios.get('/api/services/headline').then(result => {
+      console.log(result)
+      getServiceHeadline(result.data[0].headline);
+    });
+  }, []);
   return (
     <div className="services-room">
       <div className="Suspension">
@@ -13,15 +21,13 @@ const Services = () => {
       </div>
       <hr />
       <h2 className="services-statement">
-        Wether you are an enthusiast wanting a simple suspension setup for you
-        local track or a pro getting ready for the biggest race of your life, we
-        can get you dialed in. We can coordinate services from anywhere nation
-        wide. Send us a message and we'll get started!
+        {serviceHeadline}
       </h2>
       <hr />
-      <Engine />
+
+      {/* <Engine />
       <Suspension />
-      <ECU />
+      <ECU /> */}
     </div>
   );
 };
