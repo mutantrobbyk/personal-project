@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./TechEdit.css";
 import axios from "axios";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import ReactQuill from "react-quill";
+// import "react-quill/dist/quill.snow.css";
 import Cloudinary from "../../Blogs/Cloudinary";
 import Cloudinary3 from "../../Blogs/Cloudinary3";
 
@@ -98,7 +98,7 @@ export default class TechEdit extends Component {
             name="title"
             type="text"
           />
-          <ReactQuill value={body} onChange={this.handleChange2} />
+          {/* <ReactQuill value={body} onChange={this.handleChange2} /> */}
           <br />
           <input
             onChange={(e) => this.handleChange(e)}

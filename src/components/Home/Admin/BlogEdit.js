@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./BlogEdit.css";
 import axios from "axios";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import ReactQuill from "react-quill";
+// import "react-quill/dist/quill.snow.css";
 import Cloudinary from "../../Blogs/Cloudinary";
 import Cloudinary2 from "../../Blogs/Cloudinary2";
 import { clearUserInfo } from "../../../ducks/reducer";
@@ -142,7 +142,7 @@ class BlogEdit extends Component {
             name="sub_3"
             type="text"
           />
-          <ReactQuill value={body} onChange={this.handleChange2} />
+          {/* <ReactQuill value={body} onChange={this.handleChange2} /> */}
           <input
             onChange={(e) => this.handleChange(e)}
             value={cover_image}

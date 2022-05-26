@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./TechAdmin.css";
 import axios from "axios";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import ReactQuill from "react-quill";
+// import "react-quill/dist/quill.snow.css";
 import { connect } from "react-redux";
 import Cloudinary from "../../Blogs/Cloudinary";
 
@@ -123,7 +123,7 @@ class TechAdmin extends Component {
             placeholder="title"
             name="title"
           />
-          <ReactQuill value={this.state.body} onChange={this.handleChange2} />
+          {/* <ReactQuill value={this.state.body} onChange={this.handleChange2} /> */}
           <input
             value={this.state.url}
             onChange={(e) => this.handleChange(e)}

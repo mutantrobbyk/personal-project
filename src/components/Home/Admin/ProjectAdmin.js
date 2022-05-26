@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./ProjectAdmin.css";
 import axios from "axios";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import ReactQuill from "react-quill";
+// import "react-quill/dist/quill.snow.css";
 import {connect} from 'react-redux'
 import {clearUserInfo} from '../../../ducks/reducer'
 import Cloudinary from "../../Blogs/Cloudinary";
@@ -158,7 +158,7 @@ class ProjectAdmin extends Component {
             name="sub_3"
           />
           <div className='quill_box'>
-          <ReactQuill className='quill' value={this.state.body} onChange={this.handleChange2} />
+          {/* <ReactQuill className='quill' value={this.state.body} onChange={this.handleChange2} /> */}
 
           </div>
           <input

@@ -24,7 +24,6 @@ class Home extends Component {
   
   render() {
    const {classes} = this.props
-   console.log(classes)
     return (
       <div className="Home">
         <div className="main_image">
@@ -62,18 +61,18 @@ class Home extends Component {
         </div>
         <hr />
         <div className="icons">
-          <Link to="/engine">
+          {/* <Link to="/engine"> */}
             <div className="icon_pic">
               <img src={Piston} alt="Piston" />
               <h3>ENGINE</h3>
             </div>
-          </Link>
-          <Link to="/suspension">
+          {/* </Link> */}
+          {/* <Link to="/suspension"> */}
             <div className="icon_pic">
               <img src={Spring} alt="Suspension" />
               <h3>SUSPENSION</h3>
             </div>
-          </Link>
+          {/* </Link> */}
           <Link to="/projects">
             <div className="icon_pic">
               <img src={Pic} alt="Icon" />

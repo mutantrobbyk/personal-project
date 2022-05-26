@@ -39,6 +39,7 @@ export default class TechTips extends Component {
             </div>
           );
         })}
+        Great content coming soon.
       </div>
     );
   }

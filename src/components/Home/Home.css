@@ -109,9 +109,10 @@ hr {
   color: rgb(219, 5, 5);
   position: absolute;
   font-size: 2rem;
-  bottom: 0;
+  top: 0;
   left: 0;
   margin-bottom: 30%;
+  margin-top: 20%;
   margin-left: 15%;
   cursor: pointer;
   padding: 10px;
